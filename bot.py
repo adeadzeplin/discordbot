@@ -1,5 +1,4 @@
-# THIS FILE IS DEPRECIATED
-# DO NOT RUN
+# RUN THIS FILE TO START THE BOT
 
 import discord
 import os
