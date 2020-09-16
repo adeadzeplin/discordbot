@@ -1,3 +1,6 @@
+# THIS FILE IS DEPRECIATED
+# DO NOT RUN
+
 import discord
 import os
 from discord.ext import commands
