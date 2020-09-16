@@ -1,4 +1,6 @@
-# bot.py
+# bot.py Is the main bot file
+# do not run this file
+
 import os
 import random
 from insult import insult
