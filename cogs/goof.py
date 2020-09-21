@@ -26,22 +26,40 @@ class Goof(commands.Cog):
 
     @tasks.loop(seconds=60*60)
     async def looping(self):
-
-        #  754071294567514236 insult role for homies
-        #  754794032542253216 test role
         rolee = self.guild.get_role(754071294567514236)
         # await rolee.edit(name=f"The Impostor")
-
         for role in self.guild.roles:
             if role == rolee:
                 await self.purgerole( role)
-                await self.addmembertorole(role)
+                await self.addrandmembertorole(role)
+
+        #  754071294567514236 insult role for homies
+        #  754794032542253216 test role
 
 
+    @commands.command()
+    async def benis(self,ctx,target=None):
+        if target != None:
+            temp = int(target.strip('<!@>'))
+            user = self.client.get_user(temp)
+        else:
+            user = ctx.message.author
+
+        rolee = self.guild.get_role(757721456057516073) #benis role
+        for role in self.guild.roles:
+            if role == rolee:
+                await self.purgerole( role)
+                await self.giveuserole(user,role)
+
+    async def giveuserole(self,user,role):
+        for mem in self.guild.members:
+            if user == mem:
+                await mem.add_roles(role)
+                print(f"{mem} received {role}")
 
 
-    @commands.command(aliases = ['g'] )
-    async def togglegoof(self):
+    @commands.command(aliases = ['g'],pass_context=False)
+    async def togglegoof(self,ctx=None):
         # print(ctx.guild.get_role(754794032542253216))
         # role = ctx.guild.get_role(754071294567514236)
 
@@ -50,14 +68,6 @@ class Goof(commands.Cog):
             self.looping.start()
             print("goof loop starting")
 
-        # else:
-        #     for i,x in enumerate(self.activeguildlist):
-        #         if self.guild == i:
-        #             self.activeguildlist.pop(x)
-        #             break
-        #
-        #     self.looping.stop()
-        #     print("goof loop stopping")
 
 
     async def purgerole(self,role): # Removes every member from a given role
@@ -68,7 +78,7 @@ class Goof(commands.Cog):
 
 
 
-    async def addmembertorole(self,role): # Gives a random member a role
+    async def addrandmembertorole(self,role): # Gives a random member a role
         # for rolemember in role.members:
         if len(self.exemptmembers) < len(self.guild.members):
             flag = True
@@ -77,7 +87,7 @@ class Goof(commands.Cog):
             while(flag):
                 counter+=1
                 if counter == 100:
-                    return
+                    flag = False
                 rngperson = np.random.randint(0,len(self.guild.members))
                 if self.guild.members[rngperson] not in self.exemptmembers :
                     if self.guild.members[rngperson].mobile_status.name == 'online' or self.guild.members[rngperson].status.name == 'online':

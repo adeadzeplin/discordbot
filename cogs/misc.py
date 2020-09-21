@@ -45,7 +45,7 @@ class Misc(commands.Cog):
         booey = ['booey','baba','bababooey','bobby','benis','cunt','cease','why','ok','bruh','dude','pussy','later','when','uh',
                  'ew','gross','dood','<:AmongUs:749842957590462526>','<:cod:645724144952016938>','<:NUT:671476999558135868>']
         if message.author != self.client.user:
-            if message.content.startswith('!i'):
+            if message.content.startswith('!'):
                 pass
             elif '<@!725508807077396581>' in message.content:
                 await message.channel.send('```\n<:cardbackgrn:747592966704463965>\n```')
