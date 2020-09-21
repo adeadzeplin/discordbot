@@ -30,7 +30,7 @@ class Goof(commands.Cog):
         #  754071294567514236 insult role for homies
         #  754794032542253216 test role
         rolee = self.guild.get_role(754071294567514236)
-        await rolee.edit(name=f"The {insult.insult(formated=False,adjmax=1)}")
+        # await rolee.edit(name=f"The Impostor")
 
         for role in self.guild.roles:
             if role == rolee:

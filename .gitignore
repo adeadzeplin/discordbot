@@ -3,6 +3,7 @@ __pycache__/
 
 
 # Environments
+.idea
 .env
 .venv
 env/

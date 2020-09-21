@@ -9,12 +9,11 @@ from insult import insult
 import insultdatabase
 from discord.ext import tasks, commands
 
-
+BOTID = 725508807077396581
 
 class Bbb(commands.Cog):
     def __init__(self,client):
         self.client = client
-
     @commands.Cog.listener()
     async def on_ready(self):
         print(f'BBB Loaded')
@@ -70,23 +69,39 @@ class Bbb(commands.Cog):
             randindex = np.random.randint(len(voicechannels))
 
             randchannel = voicechannels[randindex]
-            await asyncio.sleep(np.random.randint(3)) # np.random.randint(60*2)
-            try:
-                vc = await randchannel.connect(timeout=60.0,reconnect=True)
-                await asyncio.sleep(np.random.randint(1,8))
-            except:
-                pass
+
+            # skipjoinflag = False
+            # for dude in randchannel.members:
+            #     if dude.id == BOTID:
+            #         skipjoinflag = True
+            # await asyncio.sleep(np.random.randint(3)) # np.random.randint(60*2)
+            # if skipjoinflag == False:
+            vc = await randchannel.connect(timeout=60.0,reconnect=True)
+            await asyncio.sleep(np.random.randint(1,8))
+
             vids = self.load_soundfiles()
             print(len(vids))
             randvid = np.random.randint(len(vids))
-            vc.play(discord.FFmpegPCMAudio(vids[randvid],executable='C:/ffmpeg/bin/ffmpeg'))
+
+            for dude in vc.channel.members: # Play function call happens in a loop checking if the bot is still conectted to voice. Because the bot can be disconnected before playing and will break everything
+                if dude.id == BOTID:
+                    vc.play(discord.FFmpegPCMAudio(vids[randvid],executable='C:/ffmpeg/bin/ffmpeg',options=['-guess_layout_max 0','-i']))
+                    break
             while vc.is_playing():
                 await asyncio.sleep(.1)
             await asyncio.sleep(.5)
-            try:
+
+            disconflag = False
+
+            for dude in vc.channel.members:
+                if dude.id == BOTID:
+                    disconflag = True
+            if disconflag == True:
+
                 await vc.disconnect(force=True)
-            except:
-                pass
+            await asyncio.sleep(2)
+
+
             print(f"bbbbing in {ctx.message.guild} sound file {vids[randvid]}")
             print(f"{i+1} of {number_of_bs}")
 

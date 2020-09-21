@@ -7,6 +7,7 @@ import time
 import  sounddevice as sd
 from insult import insult
 import insultdatabase
+import random
 import os
 from dotenv import load_dotenv
 
@@ -27,15 +28,34 @@ class Misc(commands.Cog):
     async def invitebot(self, ctx):
         response = discord.utils.oauth_url(botit, permissions=None, guild=None, redirect_uri=None)
         await ctx.send(response)
+    def returnlist(self,list,lerst):
+        output = ''
+        for l in list:
+            if l in lerst:
+                output += l + ' '
+        return output
+    def checklist(self,list,lerst):
+        for l in list:
+            if l in lerst:
+                return True
+        return False
 
     @commands.Cog.listener()
     async def on_message(self, message):
-        if message.content.startswith('!i'):
-            pass
-        elif '<@!725508807077396581>' in message.content:
-            await message.channel.send('```\n<:cardbackgrn:747592966704463965>\n```')
-            await asyncio.sleep(3)
-            await message.channel.purge(limit=2)
+        booey = ['booey','baba','bababooey','bobby','benis','cunt','cease','why','ok','bruh','dude','pussy','later','when','uh',
+                 'ew','gross','dood','<:AmongUs:749842957590462526>','<:cod:645724144952016938>','<:NUT:671476999558135868>']
+        if message.author != self.client.user:
+            if message.content.startswith('!i'):
+                pass
+            elif '<@!725508807077396581>' in message.content:
+                await message.channel.send('```\n<:cardbackgrn:747592966704463965>\n```')
+                await asyncio.sleep(3)
+                await message.channel.purge(limit=2)
+            elif self.checklist(booey,message.content):
+                await asyncio.sleep(random.randint(1,10))
+
+                await message.channel.send(self.returnlist(message.content.split(' '),booey))
+                print(message.content)
 
 
 def setup(client):
