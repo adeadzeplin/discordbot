@@ -42,7 +42,7 @@ class Misc(commands.Cog):
 
     @commands.Cog.listener()
     async def on_message(self, message):
-        booey = ['booey','baba','bababooey','bobby','benis','cunt','cease','why','ok','bruh','dude','pussy','later','when','uh',
+        booey = ['booey','baba','bababooey','bobby','benis','boofer','coochie','cunt','cease','why','ok','bruh','dude','pussy','later','when','uh',
                  'ew','gross','dood','<:AmongUs:749842957590462526>','<:cod:645724144952016938>','<:NUT:671476999558135868>']
         if message.author != self.client.user:
             if message.content.startswith('!'):
