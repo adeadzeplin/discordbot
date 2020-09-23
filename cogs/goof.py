@@ -86,7 +86,7 @@ class Goof(commands.Cog):
             counter = 0
             while(flag):
                 counter+=1
-                if counter == 100:
+                if counter >= len(self.guild.members)*2:
                     flag = False
                 rngperson = np.random.randint(0,len(self.guild.members))
                 if self.guild.members[rngperson] not in self.exemptmembers :
@@ -97,7 +97,7 @@ class Goof(commands.Cog):
         else:
             self.exemptmembers = []
             print("exempt is full")
-            await self.addmembertorole(self, role)
+            await self.addrandmembertorole(role)
 
 
 
