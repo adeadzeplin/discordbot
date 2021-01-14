@@ -4,7 +4,13 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-requests = "*"
+requests = "~=2.25.1"
+"discord.py" = "*"
+ffmpeg = "~=1.4"
+python-dotenv = "~=0.15.0"
+numpy = "~=1.19.5"
+irc = "~=19.0.1"
+pynacl = "*"
 
 [dev-packages]
 
