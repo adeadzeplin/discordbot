@@ -44,10 +44,11 @@ async def on_ready():
     # print(client.user.id)
     print('------')
 
-def run_discordbot():
+def run_discordbot(q):
+    client.que = q
     client.run(TOKEN)
 
 
 if __name__ == "__main__":
-    run_discordbot()
+    run_discordbot("where am i?")
 

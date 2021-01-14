@@ -10,14 +10,14 @@ class Admin(commands.Cog):
     def __init__(self,client):
         self.client = client
 
-    @commands.Cog.listener()
-    async def on_command_error(self,ctx,error):
-        print(f"{ctx.message.author} attempted something and caused an error {error}")
-        if error.args[0] == "You do not have permission to run this command.":
-            response = "Get fucked " + str(ctx.message.author) +"! You're " + insult() +". "+ error.args[0]
-            await ctx.send(response)
-        else:
-            await ctx.send(f"I don't know what your trying do. {error}")
+    # @commands.Cog.listener()
+    # async def on_command_error(self,ctx,error):
+    #     print(f"{ctx.message.author} attempted something and caused an error {error}")
+    #     if error.args[0] == "You do not have permission to run this command.":
+    #         response = "Get fucked " + str(ctx.message.author) +"! You're " + insult() +". "+ error.args[0]
+    #         await ctx.send(response)
+    #     else:
+    #         await ctx.send(f"I don't know what your trying do. {error}")
 
     @commands.command()
     @commands.check_any(commands.is_owner())

@@ -35,7 +35,7 @@ def getNoun():
     temp_noun += " "
     return temp_noun
 
-def insult(*, formated=True,adjmax=2):
+def insult(*, formated=True,adjmax=2,article = True):
     insultstring = ""
 
     if np.random.random() >= 0.9:
@@ -54,10 +54,13 @@ def insult(*, formated=True,adjmax=2):
 
     txtmod = textmods[np.random.randint(len(textmods)-1)]
     if formated == True:
+        insultstring = txtmod + insultstring + txtmod
+
+    if article == True:
         if vowelFlag == True:
-            insultstring = "an " + txtmod + insultstring + txtmod
+            insultstring = "an " + insultstring
         else:
-            insultstring = "a " + txtmod + insultstring + txtmod
+            insultstring = "a " + insultstring
 
     return insultstring
 

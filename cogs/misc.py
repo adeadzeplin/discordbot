@@ -4,7 +4,7 @@ import numpy as np
 import ffmpeg
 import asyncio
 import time
-import  sounddevice as sd
+# import  sounddevice as sd
 from insult import insult
 import insultdatabase
 import random
@@ -43,7 +43,7 @@ class Misc(commands.Cog):
     @commands.Cog.listener()
     async def on_message(self, message):
         booey = ['booey','hoo','hooh','dub','baba','bababooey','bobby','benis','boofer','coochie','cunt','cease','why','ok','bruh','dude','pussy','later','when','uh',
-                 'ew','gross','dood','<:AmongUs:749842957590462526>','<:cod:645724144952016938>','<:NUT:671476999558135868>']
+                 'ew','gross','dood','<:NUT:671476999558135868>']
         if message.author != self.client.user:
             if message.content.startswith('!'):
                 pass
@@ -52,9 +52,8 @@ class Misc(commands.Cog):
                 await asyncio.sleep(3)
                 await message.channel.purge(limit=2)
             elif self.checklist(booey,message.content):
-                await asyncio.sleep(random.randint(1,10))
-
-                await message.channel.send(self.returnlist(message.content.split(' '),booey))
+                # await asyncio.sleep(random.randint(1,10))
+                # await message.channel.send(self.returnlist(message.content.split(' '),booey))
                 print(message.content)
 
 

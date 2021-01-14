@@ -4,7 +4,7 @@ import numpy as np
 import ffmpeg
 import asyncio
 import time
-import  sounddevice as sd
+# import  sounddevice as sd
 from insult import insult
 import insultdatabase
 import time
