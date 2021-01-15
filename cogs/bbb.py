@@ -17,7 +17,7 @@ class Bbb(commands.Cog):
     def __init__(self,client):
         self.client = client
 
-    @tasks.loop(seconds=10)
+    @tasks.loop(seconds=5)
     async def check_queue(self):
         # print('bbb queue check')
         try:
@@ -87,6 +87,7 @@ class Bbb(commands.Cog):
             print(Called_from_Queue)
             if Called_from_Queue == True:
                 print(snds)
+                FileName = f'./sounds/{FileName}.wav'
                 if FileName in snds:
                     randsnd = FileName
                 else:
