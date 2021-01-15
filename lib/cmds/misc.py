@@ -20,12 +20,12 @@ def bbb(bot,user,*args):
     if len(args) == 1:
         for file in os.listdir('./sounds'):
             if args[0] == file[:-4]:
-                print(args[0],file[:-4])
+                file_name = file[:-4]
 
     data = {
-        "user": user,
-        "filename":file_name
+        'user': user,
+        'filename':file_name
 
     }
 
-    bot.PIPES["bbb"].put(data)
+    bot.PIPES['bbb'].put(data)

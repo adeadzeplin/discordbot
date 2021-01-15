@@ -19,15 +19,17 @@ class Bbb(commands.Cog):
 
     @tasks.loop(seconds=10)
     async def check_queue(self):
+        print('bbb queue check')
         try:
-            data = self.client.que.get(0)
+            data = self.client.pipes['bbb'].get(0)
         except:
             data = None
         # if isinstance(msg, str):
         #     if msg == 'bbb':
+        print(data)
         if data != None:
 
-            await self.bbb(None, deleteflag=False, Called_from_Queue=True, FileName=data["filename"])
+            await self.bbb(None, deleteflag=False, Called_from_Queue=True, FileName=data['filename'])
 
 
 
