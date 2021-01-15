@@ -84,7 +84,7 @@ class Bbb(commands.Cog):
 
             for dude in vc.channel.members: # Play function call happens in a loop checking if the bot is still conectted to voice. Because the bot can be disconnected before playing and will break everything
                 if dude.id == BOTID:
-                    vc.play(discord.FFmpegPCMAudio(vids[randvid],executable='C:/ffmpeg/bin/ffmpeg',options=['-guess_layout_max 0','-i']))
+                    vc.play(discord.FFmpegPCMAudio(vids[randvid]))#,executable='C:/ffmpeg/bin/ffmpeg',options=['-guess_layout_max 0','-i']
                     break
 
             if ctx != None:
