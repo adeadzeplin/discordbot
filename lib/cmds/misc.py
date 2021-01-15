@@ -20,6 +20,7 @@ def bbb(bot,user,*args):
     if len(args) == 1:
         for file in os.listdir('./sounds'):
             if args[0] == file[:-4]:
+                print(file_name,file[:-4])
                 file_name = file[:-4]
 
     data = {
