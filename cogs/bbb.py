@@ -100,6 +100,8 @@ class Bbb(commands.Cog):
 
             if ctx != None:
                 print(f"bbbbing in {ctx.message.guild} sound file {snds[randsnd]}")
+            else:
+                print(f"bbbbing sound file {snds[randsnd]}")
 
             while vc.is_playing():
                 await asyncio.sleep(.2)
