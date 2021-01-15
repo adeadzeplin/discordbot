@@ -14,14 +14,14 @@ OAUTHTOKEN = os.getenv('TWITCHOAUTHTOKEN')
 
 
 class Bot(SingleServerIRCBot):
-    def __init__(self, q):
+    def __init__(self, p):
         self.HOST = "irc.chat.twitch.tv"
         self.PORT = 6667
         self.USERNAME = USERNAME.lower()
         self.CLIENT_ID = ID
         self.TOKEN = OAUTHTOKEN
         self.CHANNEL = f"#{CHANNEL_NAME}"
-        self.QUE = q
+        self.PIPES = p
 
         url = f"https://api.twitch.tv/kraken/users?login={self.USERNAME}"
         headers = {
@@ -49,8 +49,8 @@ class Bot(SingleServerIRCBot):
     def send_message(self,message):
         self.connection.privmsg(self.CHANNEL,message)
 
-def run_twitchbot(q):
-    bot = Bot(q)
+def run_twitchbot(p):
+    bot = Bot(p)
     bot.start()
 if __name__ == "__main__":
     run_twitchbot("fuck")
