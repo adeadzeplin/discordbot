@@ -25,7 +25,6 @@ def bbb(bot,user,*args):
     data = {
         'user': user,
         'filename':file_name
-
     }
 
     bot.PIPES['bbb'].put(data)

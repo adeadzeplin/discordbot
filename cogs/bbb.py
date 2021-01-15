@@ -28,7 +28,6 @@ class Bbb(commands.Cog):
         #     if msg == 'bbb':
         print(data)
         if data != None:
-
             await self.bbb(None, deleteflag=False, Called_from_Queue=True, FileName=data['filename'])
 
 
@@ -81,18 +80,26 @@ class Bbb(commands.Cog):
             vc = await randchannel.connect(timeout=60.0,reconnect=True)
             await asyncio.sleep(np.random.randint(1,8))
 
-            vids = self.load_soundfiles()
+            snds = self.load_soundfiles()
             # for times in range(0,np.random.randint(1,3)):
             # print(len(vids))
-            randvid = np.random.randint(len(vids))
+
+            if Called_from_Queue:
+                if FileName in snds:
+                    randsnd = FileName
+                else:
+                    randsnd = np.random.randint(len(snds))
+            else:
+                randsnd = np.random.randint(len(snds))
+
 
             for dude in vc.channel.members: # Play function call happens in a loop checking if the bot is still conectted to voice. Because the bot can be disconnected before playing and will break everything
                 if dude.id == BOTID:
-                    vc.play(discord.FFmpegPCMAudio(vids[randvid]))#,executable='C:/ffmpeg/bin/ffmpeg',options=['-guess_layout_max 0','-i']
+                    vc.play(discord.FFmpegPCMAudio(snds[randsnd]))#,executable='C:/ffmpeg/bin/ffmpeg',options=['-guess_layout_max 0','-i']
                     break
 
             if ctx != None:
-                print(f"bbbbing in {ctx.message.guild} sound file {vids[randvid]}")
+                print(f"bbbbing in {ctx.message.guild} sound file {snds[randsnd]}")
 
             while vc.is_playing():
                 await asyncio.sleep(.2)
