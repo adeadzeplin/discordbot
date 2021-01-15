@@ -86,10 +86,10 @@ class Bbb(commands.Cog):
             # print(len(vids))
             print(Called_from_Queue)
             if Called_from_Queue == True:
-                print(snds)
+                # print(snds)
                 FileName = f'./sounds/{FileName}.wav'
                 if FileName in snds:
-                    randsnd = FileName
+                    randsnd = snds.index(FileName)
                 else:
                     randsnd = np.random.randint(len(snds))
             else:
