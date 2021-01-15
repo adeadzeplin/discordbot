@@ -18,8 +18,14 @@ def bbb(bot,user,*args):
     bot.send_message(f"Sending a BBB request {user['name']}!")
     file_name = None
     if len(args) == 1:
-        for filename in os.listdir('./sounds'):
-            if args[0] == filename[:-4]:
-                print(args[0],filename[:-4])
-        
-    bot.QUE.put("bbb")
+        for file in os.listdir('./sounds'):
+            if args[0] == file[:-4]:
+                print(args[0],file[:-4])
+
+    data = {
+        "user": user,
+        "filename":file_name
+
+    }
+
+    bot.PIPES["bbb"].put(data)

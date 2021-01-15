@@ -44,8 +44,8 @@ async def on_ready():
     # print(client.user.id)
     print('------')
 
-def run_discordbot(q):
-    client.que = q
+def run_discordbot(p):
+    client.pipes = p
     client.run(TOKEN)
 
 

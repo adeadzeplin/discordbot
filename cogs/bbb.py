@@ -20,12 +20,14 @@ class Bbb(commands.Cog):
     @tasks.loop(seconds=10)
     async def check_queue(self):
         try:
-            msg = self.client.que.get(0)
+            data = self.client.que.get(0)
         except:
-            msg = None
-        if isinstance(msg, str):
-            if msg == 'bbb':
-                await self.bbb(None, deleteflag=False, Called_from_Queue=True)
+            data = None
+        # if isinstance(msg, str):
+        #     if msg == 'bbb':
+        if data != None:
+
+            await self.bbb(None, deleteflag=False, Called_from_Queue=True, FileName=data["filename"])
 
 
 
@@ -45,7 +47,7 @@ class Bbb(commands.Cog):
 
 
     @commands.command(name='BBB',aliases = ['bbb','b','B'] )
-    async def bbb(self, ctx, *, number_of_bs=1, deleteflag = True, Called_from_Queue = False):
+    async def bbb(self, ctx, *, number_of_bs=1, deleteflag = True, Called_from_Queue = False,FileName=None):
         if deleteflag:
             await ctx.channel.purge(limit=1)
         if ctx == None:
