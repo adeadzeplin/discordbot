@@ -19,7 +19,7 @@ class Bbb(commands.Cog):
 
     @tasks.loop(seconds=10)
     async def check_queue(self):
-        print('bbb queue check')
+        # print('bbb queue check')
         try:
             data = self.client.pipes['bbb'].get(0)
         except:
@@ -84,7 +84,7 @@ class Bbb(commands.Cog):
             # for times in range(0,np.random.randint(1,3)):
             # print(len(vids))
 
-            if Called_from_Queue:
+            if Called_from_Queue and FileName != None:
                 if FileName in snds:
                     randsnd = FileName
                 else:
