@@ -49,7 +49,7 @@ class Bbb(commands.Cog):
 
 
     @commands.command(name='BBB',aliases = ['bbb','b','B'] )
-    async def bbb(self, ctx, *, number_of_bs=1, deleteflag = True, Called_from_Queue = False,FileName=None):
+    async def bbb(self, ctx, *, number_of_bs=1, deleteflag=True, Called_from_Queue=False,FileName=None):
         if deleteflag:
             await ctx.channel.purge(limit=1)
         if ctx == None:
@@ -84,8 +84,8 @@ class Bbb(commands.Cog):
             snds = self.load_soundfiles()
             # for times in range(0,np.random.randint(1,3)):
             # print(len(vids))
-
-            if Called_from_Queue and FileName is not None:
+            print(Called_from_Queue)
+            if Called_from_Queue == True:
                 print(snds)
                 if FileName in snds:
                     randsnd = FileName
