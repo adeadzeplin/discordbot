@@ -86,6 +86,7 @@ class Bbb(commands.Cog):
             # print(len(vids))
 
             if Called_from_Queue and FileName is not None:
+                print(snds)
                 if FileName in snds:
                     randsnd = FileName
                 else:
