@@ -26,8 +26,9 @@ class Bbb(commands.Cog):
             data = None
         # if isinstance(msg, str):
         #     if msg == 'bbb':
-        print(data)
+
         if data != None:
+            print(data['filename'])
             await self.bbb(None, deleteflag=False, Called_from_Queue=True, FileName=data['filename'])
 
 
@@ -84,7 +85,7 @@ class Bbb(commands.Cog):
             # for times in range(0,np.random.randint(1,3)):
             # print(len(vids))
 
-            if Called_from_Queue and FileName != None:
+            if Called_from_Queue and FileName is not None:
                 if FileName in snds:
                     randsnd = FileName
                 else:
