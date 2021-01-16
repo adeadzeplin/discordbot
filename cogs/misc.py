@@ -10,6 +10,7 @@ import insultdatabase
 import random
 import os
 from dotenv import load_dotenv
+from discord.ext import tasks
 
 load_dotenv()
 botit = os.getenv('BOT_ID')

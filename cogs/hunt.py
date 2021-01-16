@@ -1,5 +1,5 @@
 import discord
-from discord.ext import commands
+from discord.ext import commands, tasks
 import numpy as np
 import ffmpeg
 import asyncio
@@ -37,29 +37,30 @@ class Hunt(commands.Cog):
     def getplayer(self, ID):
         return self.player_ids[self.getindexid(ID)]
 
-    async def load_animation(self,index,message):
-        await self.players[index].msg.edit(content=f"```\nYou have selected: '{message.content}'\nControls:  WASD to move    0 to use item\nLOADING...... \n```")
+    async def load_animation(self,index,messag):
+
+        await self.players[index].msg.edit(content=f"```\nYou have selected: '{messag}'\nControls:  WASD to move    0 to use item\nLOADING...... \n```")
         await asyncio.sleep(.9)
-        await self.players[index].msg.edit(content=f"```\nYou have selected: '{message.content}'\nControls:  WASD to move    0 to use item\nLOADING|..... \n```")
+        await self.players[index].msg.edit(content=f"```\nYou have selected: '{messag}'\nControls:  WASD to move    0 to use item\nLOADING|..... \n```")
         await asyncio.sleep(.9)
-        await self.players[index].msg.edit(content=f"```\nYou have selected: '{message.content}'\nControls:  WASD to move    0 to use item\nLOADING||.... \n```")
+        await self.players[index].msg.edit(content=f"```\nYou have selected: '{messag}'\nControls:  WASD to move    0 to use item\nLOADING||.... \n```")
         await asyncio.sleep(.9)
-        await self.players[index].msg.edit(content=f"```\nYou have selected: '{message.content}'\nControls:  WASD to move    0 to use item\nLOADING||||.. \n```")
+        await self.players[index].msg.edit(content=f"```\nYou have selected: '{messag}'\nControls:  WASD to move    0 to use item\nLOADING||||.. \n```")
         await asyncio.sleep(.9)
-        await self.players[index].msg.edit(content=f"```\nYou have selected: '{message.content}'\nControls:  WASD to move    0 to use item\nLOADING|||||. \n```")
+        await self.players[index].msg.edit(content=f"```\nYou have selected: '{messag}'\nControls:  WASD to move    0 to use item\nLOADING|||||. \n```")
         await asyncio.sleep(.9)
-        await self.players[index].msg.edit(content=f"```\nYou have selected: '{message.content}'\nControls:  WASD to move    0 to use item\nLOADING|||||| \n```")
+        await self.players[index].msg.edit(content=f"```\nYou have selected: '{messag}'\nControls:  WASD to move    0 to use item\nLOADING|||||| \n```")
         await asyncio.sleep(.9)
-        await self.players[index].msg.edit(content=f"```\nYou have selected: '{message.content}'\nControls:  WASD to move    0 to use item\nLOADING||||||D \n```")
-        await asyncio.sleep(.9)
-        await self.players[index].msg.edit(
-            content=f"```\nYou have selected: '{message.content}'\nControls:  WASD to move    0 to use item\nLOADING||||||DO \n```")
+        await self.players[index].msg.edit(content=f"```\nYou have selected: '{messag}'\nControls:  WASD to move    0 to use item\nLOADING||||||D \n```")
         await asyncio.sleep(.9)
         await self.players[index].msg.edit(
-            content=f"```\nYou have selected: '{message.content}'\nControls:  WASD to move    0 to use item\nLOADING||||||DON \n```")
+            content=f"```\nYou have selected: '{messag}'\nControls:  WASD to move    0 to use item\nLOADING||||||DO \n```")
         await asyncio.sleep(.9)
         await self.players[index].msg.edit(
-            content=f"```\nYou have selected: '{message.content}'\nControls:  WASD to move    0 to use item\nLOADING||||||DONE\n```")
+            content=f"```\nYou have selected: '{messag}'\nControls:  WASD to move    0 to use item\nLOADING||||||DON \n```")
+        await asyncio.sleep(.9)
+        await self.players[index].msg.edit(
+            content=f"```\nYou have selected: '{messag}'\nControls:  WASD to move    0 to use item\nLOADING||||||DONE\n```")
         await asyncio.sleep(.9)
         messg, ddd = self.players[index].game.getscreenstring()
         await self.players[index].msg.edit(content=f"{messg}")
@@ -68,18 +69,37 @@ class Hunt(commands.Cog):
     @commands.Cog.listener()
     async def on_ready(self):
         print(f'Hunt Loaded')
+        self.server = self.client.get_guild(437778883744628736)
+        for chan in self.server.channels:
+            if chan.name == 'bot-spam':
+                self.chat_channel = chan
+                break
+
+        await self.check_queue.start()
+
 
     @commands.Cog.listener()
-    async def on_message(self, message):
-        if message.author in self.player_ids:
-            index = self.getindexid(message.author)
-            if message.content == 'reset':
+    async def on_message(self, message, Called_from_chat=False):
+        if not Called_from_chat:
+            msgauth = message.author
+            msgcont = message.content
+        else:
+            msgauth = 'chat'
+            msgcont = message
+        if msgauth in self.player_ids or (Called_from_chat == True and 'chat' in self.player_ids):
+            if Called_from_chat:
+                index = self.getindexid('chat')
+            else:
+                index = self.getindexid(message.author)
+
+            if msgcont == 'reset' or message == 'reset':
                 self.players.pop(index)
                 self.player_ids.pop(index)
                 return
             if time.perf_counter() - self.players[index].lastcalled > 60*5 : #player timeout
                 await self.players[index].msg.edit(content=f"```\n{self.player_ids[index]} has been timed out: \n```")
-                await message.channel.purge(limit=1)
+                if not Called_from_chat:
+                    await message.channel.purge(limit=1)
 
                 self.players.pop(index)
                 self.player_ids.pop(index)
@@ -89,33 +109,51 @@ class Hunt(commands.Cog):
 
 
             if self.players[index].state == 'init':
-                if len(message.content) == 1:
-                    self.players[index].game.player.icon = f'{message.content} '
+                if len(msgcont) == 1 or Called_from_chat:
+                    if not Called_from_chat:
+                        self.players[index].game.player.icon = f'{message.content} '
+                    else:
+                        self.players[index].game.player.icon = f'+ '
                     self.players[index].game.screen[self.players[index].game.player.y][self.players[index].game.player.x] = self.players[index].game.player.icon
-                    await message.channel.purge(limit=1)
+                    if not Called_from_chat:
+                        await message.channel.purge(limit=1)
+                        await self.load_animation(index,message.content)
+                    else:
+                        await self.load_animation(index,f'+ ')
 
-                    await self.load_animation(index,message)
                     self.players[index].state = 'run'
 
                 else:
-                    await self.players[index].msg.edit(content=f"```\nYou MUST select a single character. Such as '+'\n'{message.content}' is not allowed\n```")
-                    await asyncio.sleep(.9)
-                    await message.channel.purge(limit=1)
+                    if not Called_from_chat:
+                        await self.players[index].msg.edit(content=f"```\nYou MUST select a single character. Such as '+'\n'{message.content}' is not allowed\n```")
+                        await asyncio.sleep(.9)
+                        await message.channel.purge(limit=1)
             elif self.players[index].state == 'run':
-                self.players[index].game.updategame(message.content)
-                await message.channel.purge(limit=1)
+                if not Called_from_chat:
+                    self.players[index].game.updategame(message.content)
+                    await message.channel.purge(limit=1)
+                else:
+                    self.players[index].game.updategame(message)
+
                 mesg, status = self.players[index].game.getscreenstring()
                 self.players[index].state = status
                 await self.players[index].msg.edit(content=f"{mesg}")
                 await asyncio.sleep(1)
             elif self.players[index].state == 'lose':
-                await self.players[index].msg.edit(content=f"{message.author} I'm sure you tried your best <:kekw:722948944019325091> <:kekw:722948944019325091>")
+                if not Called_from_chat:
+                    await self.players[index].msg.edit(content=f"{message.author} I'm sure you tried your best <:kekw:722948944019325091> <:kekw:722948944019325091>")
+                else:
+                    await self.players[index].msg.edit(content=f" I'm sure you tried your best <:kekw:722948944019325091> <:kekw:722948944019325091>")
                 self.players.pop(index)
                 self.player_ids.pop(index)
                 await asyncio.sleep(.9)
 
             elif self.players[index].state == 'win':
-                await self.players[index].msg.edit(content=f"<:pogchamp:682006550122201128> <:pogchamp:682006550122201128> {message.author} Beat BasliEsc! <:pogchamp:682006550122201128> <:pogchamp:682006550122201128>")
+                if not Called_from_chat:
+                    await self.players[index].msg.edit(content=f"<:pogchamp:682006550122201128> <:pogchamp:682006550122201128> {message.author} Beat BasliEsc! <:pogchamp:682006550122201128> <:pogchamp:682006550122201128>")
+                else:
+                    await self.players[index].msg.edit(content=f"<:pogchamp:682006550122201128> <:pogchamp:682006550122201128> Twitch Chat Beat BasliEsc! <:pogchamp:682006550122201128> <:pogchamp:682006550122201128>")
+
                 self.players.pop(index)
                 self.player_ids.pop(index)
                 await asyncio.sleep(.9)
@@ -124,11 +162,32 @@ class Hunt(commands.Cog):
     # async def tryer(self, ctx, *, InsultTarget="ctx.message.author"):
         # message = await ctx.send(content=f" ")
         # self.getblankscreen()
+    @tasks.loop(seconds=.5)
+    async def check_queue(self):
+        # print('bbb queue check')
+        try:
+            data = self.client.pipes['t2d']['hunt'].get(0)
+        except:
+            data = None
+            return
+        # if isinstance(msg, str):
+        #     if msg == 'bbb':
 
+        if data != None:
+            # print(data)
+
+            if 'chat' not in self.player_ids:
+                self.player_ids.append('chat')
+                message = await self.chat_channel.send(content=f"```\nEnter a symbol for your character\n```")
+                temp = Player('chat', message)
+                self.players.append(temp)
+
+            await self.on_message(message=data['command'], Called_from_chat=True)
+
+    # print(data['filename'])
     @commands.command(aliases = ['bas'] )
     async def basilisk(self, ctx, *, InsultTarget="ctx.message.author"):
         print(f"{ctx.message.author} called the h command in '{ctx.guild}' in channel: {ctx.channel}")
-
         if ctx.message.author not in self.player_ids:
             await ctx.channel.purge(limit=1)
 

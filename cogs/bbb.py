@@ -21,15 +21,15 @@ class Bbb(commands.Cog):
     async def check_queue(self):
         # print('bbb queue check')
         try:
-            data = self.client.pipes['bbb'].get(0)
+            data = self.client.pipes['t2d']['bbb'].get(0)
         except:
             data = None
         # if isinstance(msg, str):
         #     if msg == 'bbb':
 
         if data != None:
-            print(data['filename'])
-            await self.bbb(None, deleteflag=False, Called_from_Queue=True, FileName=data['filename'])
+            # print(data['filename'])
+            await self.bbb(None, deleteflag=False, Called_from_Queue=True, FileName=data['filename'], User=data['user'])
 
 
 
@@ -49,7 +49,7 @@ class Bbb(commands.Cog):
 
 
     @commands.command(name='BBB',aliases = ['bbb','b','B'] )
-    async def bbb(self, ctx, *, number_of_bs=1, deleteflag=True, Called_from_Queue=False,FileName=None):
+    async def bbb(self, ctx, *, number_of_bs=1, deleteflag=True, Called_from_Queue=False,FileName=None, User=None):
         if deleteflag:
             await ctx.channel.purge(limit=1)
         if ctx == None:
@@ -84,8 +84,8 @@ class Bbb(commands.Cog):
             snds = self.load_soundfiles()
             # for times in range(0,np.random.randint(1,3)):
             # print(len(vids))
-            print(Called_from_Queue)
-            if Called_from_Queue == True:
+            # print(Called_from_Queue)
+            if Called_from_Queue == True and FileName != None :
                 # print(snds)
                 FileName = f'./sounds/{FileName}.wav'
                 if FileName in snds:
@@ -104,8 +104,7 @@ class Bbb(commands.Cog):
             if ctx != None:
                 print(f"bbbbing in {ctx.message.guild} sound file {snds[randsnd]}")
             else:
-                print(f"bbbbing sound file {snds[randsnd]}")
-
+                print(f"bbbbing sound file: '{snds[randsnd].replace('./sounds/','').replace('.wav','')}'")
             while vc.is_playing():
                 await asyncio.sleep(.2)
             await asyncio.sleep(.2)

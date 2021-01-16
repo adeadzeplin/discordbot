@@ -6,6 +6,7 @@ PREFIX = "!"
 cmds = {
     "hello": misc.hello,
     "bbb": misc.bbb,
+    "basilisk": misc.basilisk,
 }
 
 
@@ -14,7 +15,9 @@ def process(bot, user, message):
         cmd = message.split(" ")[0][len(PREFIX):]
         args = message.split(" ")[1:]
         perform(bot,user,cmd,*args)
-    pass
+    elif bot.hunt_flag == True:
+        args = message.split(" ")
+        perform(bot, user, 'basilisk', *args)
 
 def perform(bot,user,cmd,*args):
     for name, func in cmds.items():

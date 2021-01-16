@@ -259,7 +259,7 @@ class Basilesc():
         self.portal.revert()
 
 
-    def updategame(self,userinput):
+    def updategame(self,userinput): # assumes single character input
         num_frames_to_advance = len(userinput)
         for i in range(num_frames_to_advance):
             self.advanceframe(userinput[i])
