@@ -12,7 +12,7 @@ def king(bot,user,*args):
         bot.send_message(f"Sending a game init request {user['name']}!")
         bot.hunt_flag = False
         bot.king_flag = True
-    elif len(args) == 1:
+    elif len(args) == 2:
         bot.send_message(f"Sending Data to server")
         data = {
             'user': user,
