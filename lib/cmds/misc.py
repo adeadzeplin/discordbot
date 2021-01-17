@@ -7,15 +7,18 @@ def help(bot, prefix,cmds):
 def hello(bot,user,*args):
     bot.send_message(f"Hey {user['name']}! {' '.join(args)} to you too!")
 
-def data(bot,user,*args):
-    bot.send_message(f"Sending Data to server")
-    data = {
-        'user': user,
-        'args':args
-    }
-    bot.PIPES['t2s']['data'].put(data)
-    print('pipe loaded')
-
+def king(bot,user,*args):
+    if bot.king_flag == False and user['name'] == 'adeadzeplin':
+        bot.send_message(f"Sending a game init request {user['name']}!")
+        bot.hunt_flag = False
+        bot.king_flag = True
+    elif len(args) == 1:
+        bot.send_message(f"Sending Data to server")
+        data = {
+            'user': user,
+            'args':args
+        }
+        bot.PIPES['t2s']['data'].put(data)
 
 
 def bbb(bot,user,*args):
@@ -35,7 +38,7 @@ def bbb(bot,user,*args):
     bot.PIPES['t2d']['bbb'].put(data)
 
 def basilisk(bot,user,*args):
-    if bot.hunt_flag == False:
+    if bot.hunt_flag == False and user['name'] == 'adeadzeplin':
         bot.send_message(f"Sending a basilisk request {user['name']}!")
         bot.hunt_flag = True
     elif len(args) == 1:

@@ -7,7 +7,7 @@ cmds = {
     "hello": misc.hello,
     "bbb": misc.bbb,
     "basilisk": misc.basilisk,
-    "data": misc.data
+    "king": misc.king
 }
 
 
@@ -19,6 +19,9 @@ def process(bot, user, message):
     elif bot.hunt_flag == True:
         args = message.split(" ")
         perform(bot, user, 'basilisk', *args)
+    elif bot.king_flag == True:
+        args = message.split(" ")
+        perform(bot, user, 'king', *args)
 
 def perform(bot,user,cmd,*args):
     for name, func in cmds.items():
