@@ -13,13 +13,18 @@ def king(bot,user,*args):
         bot.hunt_flag = False
         bot.king_flag = True
     elif len(args) == 2:
-        bot.send_message(f"Sending Data to server")
         data = {
             'user': user,
             'args':args
         }
         bot.PIPES['t2s']['data'].put(data)
-
+    elif args[0] == 'join':
+        bot.send_message(f"{user['name']} Joined king of the hill")
+        data = {
+            'user': user,
+            'args': args
+        }
+        bot.PIPES['t2s']['data'].put(data)
 
 def bbb(bot,user,*args):
     bot.send_message(f"Sending a BBB request {user['name']}!")
