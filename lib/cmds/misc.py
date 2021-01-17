@@ -7,8 +7,14 @@ def help(bot, prefix,cmds):
 def hello(bot,user,*args):
     bot.send_message(f"Hey {user['name']}! {' '.join(args)} to you too!")
 
-
-
+def data(bot,user,*args):
+    bot.send_message(f"Sending Data to server")
+    data = {
+        'user': user,
+        'args':args
+    }
+    bot.PIPES['t2s']['data'].put(data)
+    print('pipe loaded')
 
 
 

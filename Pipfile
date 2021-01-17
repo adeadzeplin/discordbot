@@ -11,8 +11,11 @@ python-dotenv = "~=0.15.0"
 irc = "~=19.0.1"
 pynacl = "*"
 numpy = "*"
+python-socketio = "*"
+eventlet = "*"
+pipenv = "*"
 
 [dev-packages]
 
 [requires]
-python_version = "3.8"
+python_version = "3.7"
