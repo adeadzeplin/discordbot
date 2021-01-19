@@ -20,9 +20,15 @@ def process(bot, user, message):
         args = message.split(" ")
         perform(bot, user, 'basilisk', *args)
     elif bot.king_flag == True:
-        args = message.split(" ")
-        perform(bot, user, 'king', *args)
+        if user['name'] == 'adeadzeplin':
+            multi = message.split(' | ')
+            for m in multi:
+                args = m.split(" ")
+                perform(bot, user, 'king', *args)
 
+        else:
+            args = message.split(" ")
+            perform(bot, user, 'king', *args)
 def perform(bot,user,cmd,*args):
     for name, func in cmds.items():
         if cmd == name:
