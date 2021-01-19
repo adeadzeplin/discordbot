@@ -18,7 +18,7 @@ def king(bot,user,*args):
             'args':args
         }
         bot.PIPES['t2s']['data'].put(data)
-    elif args[0] == 'join':
+    elif args[0] == 'join' or (user['name'] == 'adeadzeplin'):
         bot.send_message(f"{user['name']} Joined king of the hill")
         data = {
             'user': user,
