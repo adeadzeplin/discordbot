@@ -1,5 +1,5 @@
 LIST_OF_ADJECTIVES = ["derpy","poopy","nazi","boiled","onion-breathed","belligerent","thorny","homophobic","calloused","vain","patronizing","defective","broken","unshaven","horny","defensive","unibrowed","bitchy","cruel","worthless","hostile","insufferable","dense","cavernous", "thick","feeble-minded","nasty","impolite","clumsy","stupid","rude","ripe","dim-witted","gelatenous","shit","poopy","pussy-breath","dick-breath","tiny", "ugly","meanie","motherfuckin", "stank","wet","nick-lookin", "soggy","big","small","fat", "cancerous","cringe", "ass","stinky"]
-LIST_OF_NOUNS = ["fart","benis","mouthbreather","troglodyte","arse","scab","joke","brute","dandelion","grunt","noob","dingleberry","wart","NPC","goblin","turd","twat","wanker","worm","idiot","oaf","baby", "motherfucker","cunt","ass","lobotomite","maggot", "cooter","bitch", "titty", "cum-stain","cum","cum-hole", "dickhead","bussy"]
+LIST_OF_NOUNS = ["fart","benis","mouthbreather","troglodyte","arse","scab","joke","brute","dandelion","grunt","noob","dingleberry","wart","NPC","goblin","turd","twat","wanker","worm","idiot","oaf","baby", "motherfucker","cunt","ass","lobotomite", "cooter","bitch", "titty", "cum-stain","cum","cum-hole", "dickhead","bussy"]
 import pickle
 
 
