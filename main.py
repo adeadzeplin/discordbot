@@ -13,10 +13,11 @@ def main():
         't2d': {
             'bbb': multiprocessing.Queue(),
             'hunt': multiprocessing.Queue(),
+
         },
         't2s': {
             'data': multiprocessing.Queue()
-        }
+        },
     }
 
 

@@ -26,6 +26,14 @@ def on_message(sid):
         out_data = 'None'
     sio.emit('chat_data',out_data)
 
+@sio.on('insult')
+def on_message(sid):
+    import insult
+    out_data = {
+        'insult': insult.insult(formated=False,adjmax=2,article=False)
+    }
+    sio.emit('insult',out_data)
+
 @sio.event
 def disconnect():
     print('Client disconnect')
