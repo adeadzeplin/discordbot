@@ -57,6 +57,13 @@ class Bot(SingleServerIRCBot):
         if user["name"] != USERNAME:
             cmds.process(self,user,message)
 
+    def on_whisper(self, cxn, event):
+        tags = {kvpair["key"]: kvpair["value"] for kvpair in event.tags}
+        user = {"name": tags["display-name"], "id": tags["user-id"]}
+        message = event.arguments[0]
+        if user["name"] != USERNAME:
+            cmds.process(self, user, message)
+        print('whisper happened')
 
     def send_message(self,message):
         self.connection.privmsg(self.CHANNEL,message)
