@@ -35,7 +35,7 @@ def on_message(sid):
     sio.emit('insult',out_data)
 
 @sio.event
-def disconnect():
+def disconnect(sid):
     print('Client disconnect')
 
 
