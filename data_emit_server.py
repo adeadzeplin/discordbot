@@ -35,8 +35,8 @@ def on_message(sid):
     sio.emit('insult',out_data)
 
 @sio.on('bbb')
-def on_message(data):
-    print(data)
+def on_message(sid,data):
+    print(sid,data)
 
 
 
