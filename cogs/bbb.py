@@ -35,7 +35,7 @@ class Bbb(commands.Cog):
 
         if data != None:
             # print(data['filename'])
-            await self.bbb(None, deleteflag=False, Called_from_Queue=True, FileName=data['filename'], User=data['user'], No_random_delay=True)
+            await self.bbb(None, deleteflag=False, Called_from_Queue=True, FileName=data['filename'], No_random_delay=True)
 
 
 
