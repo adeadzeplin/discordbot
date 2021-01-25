@@ -114,7 +114,7 @@ class Bbb(commands.Cog):
                 print(f"bbbbing sound file: '{snds[randsnd].replace('./sounds/','').replace('.wav','')}'")
             while vc.is_playing():
                 await asyncio.sleep(.2)
-            await asyncio.sleep(.2)
+            await asyncio.sleep(2)
 
             disconflag = False
 
