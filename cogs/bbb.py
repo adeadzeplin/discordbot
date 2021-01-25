@@ -17,7 +17,7 @@ class Bbb(commands.Cog):
     def __init__(self,client):
         self.client = client
 
-    @tasks.loop(seconds=.3)
+    @tasks.loop(seconds=1)
     async def check_queue(self):
         # print('bbb queue check')
         try:
