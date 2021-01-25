@@ -21,7 +21,13 @@ class Bbb(commands.Cog):
     async def check_queue(self):
         # print('bbb queue check')
         try:
-            data = self.client.pipes['t2d']['bbb'].get(0)
+            data = self.client.pipes['s2d']['bbb'].get(0)
+        except:
+            data = None
+
+        try:
+            if data is None:
+                data = self.client.pipes['t2d']['bbb'].get(0)
         except:
             data = None
         # if isinstance(msg, str):
@@ -29,7 +35,7 @@ class Bbb(commands.Cog):
 
         if data != None:
             # print(data['filename'])
-            await self.bbb(None, deleteflag=False, Called_from_Queue=True, FileName=data['filename'], User=data['user'])
+            await self.bbb(None, deleteflag=False, Called_from_Queue=True, FileName=data['filename'], User=data['user'], No_random_delay=True)
 
 
 
@@ -49,7 +55,7 @@ class Bbb(commands.Cog):
 
 
     @commands.command(name='BBB',aliases = ['bbb','b','B'] )
-    async def bbb(self, ctx, *, number_of_bs=1, deleteflag=True, Called_from_Queue=False,FileName=None, User=None):
+    async def bbb(self, ctx, *, number_of_bs=1, deleteflag=True, Called_from_Queue=False,FileName=None, No_random_delay=False):
         if deleteflag:
             await ctx.channel.purge(limit=1)
         if ctx == None:
@@ -79,7 +85,8 @@ class Bbb(commands.Cog):
             # await asyncio.sleep(np.random.randint(3)) # np.random.randint(60*2)
             # if skipjoinflag == False:
             vc = await randchannel.connect(timeout=60.0,reconnect=True)
-            await asyncio.sleep(np.random.randint(1,8))
+            if not No_random_delay:
+                await asyncio.sleep(np.random.randint(1,8))
 
             snds = self.load_soundfiles()
             # for times in range(0,np.random.randint(1,3)):

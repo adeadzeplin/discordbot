@@ -36,8 +36,11 @@ def on_message(sid):
 
 @sio.on('bbb')
 def on_message(sid,data):
-    print(sid,data)
-
+    # print(sid,data)
+    to_discord_bot = {
+        'filename': data
+    }
+    service.data_queue['s2d']['bbb'].put(to_discord_bot)
 
 
 @sio.event

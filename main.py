@@ -18,6 +18,9 @@ def main():
         't2s': {
             'data': multiprocessing.Queue()
         },
+        's2d': {
+            'bbb': multiprocessing.Queue()
+        },
     }
 
 
