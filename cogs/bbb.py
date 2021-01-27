@@ -86,7 +86,7 @@ class Bbb(commands.Cog):
             # if skipjoinflag == False:
             vc = await randchannel.connect(timeout=60.0,reconnect=True)
             if not No_random_delay:
-                await asyncio.sleep(np.random.randint(1,8))
+                await asyncio.sleep(np.random.randint(2,10))
 
             snds = self.load_soundfiles()
             # for times in range(0,np.random.randint(1,3)):
