@@ -13,12 +13,12 @@ def info(bot,user,*args):
     if len(args) >0:
         if args[0] == 'koth':
             bot.send_message(
-                f"To play King of the hill:\n"
-                f"'join' - when a new game is beginning\n"
-                f"'(rotation) (power)' - input a rotational value from 0-359 and a power value from 0 - 100\n"
-                f"\n"
-                f"The distance between each ring is 5 power\n"
-                f"You can privately message the bot your input to hide it from other players\n"
+                f"To play King of the hill:"
+                f"'join' - when a new game is beginning."
+                f"'(rotation) (power)' - input a rotational value from 0-359 and a power value from 0 - 100."
+                f""
+                f"The distance between each ring is 5 power."
+                f"You can privately message the bot your input to hide it from other players."
             )
 
 def king(bot,user,*args):
