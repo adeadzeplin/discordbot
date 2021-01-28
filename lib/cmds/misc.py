@@ -34,7 +34,7 @@ def king(bot,user,*args):
         bot.PIPES['t2s']['data'].put(data)
 
 
-    elif args[0] == 'join':
+    elif args[0].lower() == 'join':
         url = f"https://api.twitch.tv/kraken/users?login={user['name']}"
         headers = {
             "Client-ID": bot.CLIENT_ID,
