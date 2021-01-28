@@ -7,7 +7,9 @@ cmds = {
     "hello": misc.hello,
     "bbb": misc.bbb,
     "basilisk": misc.basilisk,
-    "king": misc.king
+    "king": misc.king,
+    "info":misc.info
+
 }
 
 
