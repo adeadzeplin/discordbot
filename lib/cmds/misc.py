@@ -1,4 +1,6 @@
 import os
+from requests import get
+
 
 
 def help(bot, prefix,cmds):
@@ -18,20 +20,27 @@ def king(bot,user,*args):
             'args':args
         }
         bot.PIPES['t2s']['data'].put(data)
-    elif (user['name'] == 'adeadzeplin'):
-
-        data = {
-            'user': user,
-            'args': args
-        }
-        bot.PIPES['t2s']['data'].put(data)
+    # elif (user['name'] == 'adeadzeplin'):
+    #
+    #     data = {
+    #         'user': user,
+    #         'args': args
+    #     }
+    #     bot.PIPES['t2s']['data'].put(data)
 
     elif args[0] == 'join':
+        url = f"https://api.twitch.tv/kraken/users?login={user['name']}"
+        headers = {
+            "Client-ID": bot.CLIENT_ID,
+            "Accept": "application/vnd.twitchtv.v5+json",
+        }
+        resp = get(url,headers=headers).json()
 
         bot.send_message(f"{user['name']} Joined king of the hill")
         data = {
             'user': user,
-            'args': args
+            'args': args,
+            'logo': resp['users'][0]['logo']
         }
         bot.PIPES['t2s']['data'].put(data)
 

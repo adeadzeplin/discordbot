@@ -48,10 +48,10 @@ def disconnect(sid):
     print('Client disconnect')
 
 
-def data_server(q):
+def data_server(q,port=3333):
     print('data server starting')
     service.data_queue = q
-    eventlet.wsgi.server(eventlet.listen(('', 3333)), service.app, log_output=False)
+    eventlet.wsgi.server(eventlet.listen(('', port)), service.app, log_output=False)
 
 if __name__ == '__main__':
     data_server(None)
