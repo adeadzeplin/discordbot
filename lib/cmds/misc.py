@@ -79,6 +79,8 @@ def basilisk(bot,user,*args):
     if bot.hunt_flag == False and user['name'] == 'adeadzeplin':
         bot.send_message(f"Sending a basilisk request {user['name']}!")
         bot.hunt_flag = True
+        bot.king_flag = False
+
     elif len(args) == 1:
         data = {
             'user': user,
