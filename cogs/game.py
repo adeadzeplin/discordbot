@@ -43,7 +43,7 @@ class DiceGame():
         self.dicelim = 6
         self.dicecount = 6
         self.player_turn_tracker = 0
-        self.recent_bid = Noneh
+        self.recent_bid = None
         self.recent_bider= None
         self.state = None
         self.dice_commands = {
