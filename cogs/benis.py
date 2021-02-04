@@ -9,7 +9,7 @@ class Benis(commands.Cog):
         self.guild = self.client.get_guild(437778883744628736)
         self.role = self.guild.get_role(757721456057516073)  # benis role
 
-    @commands.command()
+    @commands.command(aliases = ['b'])
     async def benis(self,ctx,target=None):
         if target != None:
             temp = int(target.strip('<!@>'))
