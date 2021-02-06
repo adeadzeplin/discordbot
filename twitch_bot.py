@@ -27,6 +27,7 @@ class Bot(SingleServerIRCBot):
         self.s = irc.schedule.DefaultScheduler()
         self.hunt_flag = False
         self.king_flag = False
+        self.pachinko_flag = False
 
 
         url = f"https://api.twitch.tv/kraken/users?login={self.USERNAME}"

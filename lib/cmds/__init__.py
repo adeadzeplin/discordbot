@@ -8,7 +8,8 @@ cmds = {
     "bbb": misc.bbb,
     "basilisk": misc.basilisk,
     "king": misc.king,
-    "info":misc.info
+    "info":misc.info,
+    "pachinko":misc.pachinko
 
 }
 
@@ -21,6 +22,10 @@ def process(bot, user, message):
     elif bot.hunt_flag == True:
         args = message.split(" ")
         perform(bot, user, 'basilisk', *args)
+    elif bot.pachinko_flag == True:
+        args = message.split(" ")
+        perform(bot, user, 'pachinko', *args)
+
     elif bot.king_flag == True:
         if user['name'] == 'adeadzeplin':
             multi = message.split(' | ')

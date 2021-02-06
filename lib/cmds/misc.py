@@ -20,12 +20,26 @@ def info(bot,user,*args):
                 f"The distance between each ring is 5 power.    "
                 f"You can privately message the bot your input to hide it from other players.   "
             )
+def pachinko(bot,user,*args):
+    if bot.pachinko_flag == False and user['name'] == 'adeadzeplin':
+        bot.pachinko_flag = True
+        bot.king_flag = False
+        bot.hunt_flag = False
+    elif bot.pachinko_flag:
+        data = {
+            'user': user,
+            'args': args
+        }
+        bot.PIPES['t2s']['data'].put(data)
+
 
 def king(bot,user,*args):
     if bot.king_flag == False and user['name'] == 'adeadzeplin':
         bot.send_message(f"Sending a game init request {user['name']}!")
         bot.hunt_flag = False
         bot.king_flag = True
+        bot.pachinko_flag = False
+
     elif len(args) == 2:
         data = {
             'user': user,
@@ -80,6 +94,7 @@ def basilisk(bot,user,*args):
         bot.send_message(f"Sending a basilisk request {user['name']}!")
         bot.hunt_flag = True
         bot.king_flag = False
+        bot.pachinko_flag = False
 
     elif len(args) == 1:
         data = {
