@@ -6,8 +6,8 @@ class Benis(commands.Cog):
     @commands.Cog.listener()
     async def on_ready(self):
         print(f'Misc Loaded')
-        self.guild = self.client.get_guild(437778883744628736)
-        self.role = self.guild.get_role(757721456057516073)  # benis role
+        self.guild = self.client.get_guild(insert_your_server_id_here)
+        self.role = self.guild.get_role(insert_your_role_id_here)  # benis role
 
     @commands.command()
     async def benis(self,ctx,target=None):
