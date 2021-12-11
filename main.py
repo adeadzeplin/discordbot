@@ -24,12 +24,12 @@ def main():
     }
 
 
-    twitch_bot = multiprocessing.Process(target=run_twitchbot,args=(pipes,))
-    twitch_bot.start()
+    # twitch_bot = multiprocessing.Process(target=run_twitchbot,args=(pipes,))
+    # twitch_bot.start()
     discord_bot = multiprocessing.Process(target=run_discordbot,args=(pipes,))
     discord_bot.start()
-    data_service = multiprocessing.Process(target=data_server, args=(pipes,))
-    data_service.start()
+    # data_service = multiprocessing.Process(target=data_server, args=(pipes,))
+    # data_service.start()
 
 
 

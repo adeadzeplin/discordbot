@@ -59,7 +59,7 @@ class Bbb(commands.Cog):
         if deleteflag:
             await ctx.channel.purge(limit=1)
         if ctx == None:
-            server = self.client.get_guild(437778883744628736)
+            server = self.client.get_guild(911398925804646421)
         else:
             server = ctx.message.guild
         voicechannels = []

@@ -21,19 +21,7 @@ dice_o = '<:iso:785599417356124232>'
 def rand_obj(lis):
     return lis[random.randint(0,len(lis)-1)]
 
-class Player():
-    def __init__(self,dude,dicelim,dicecount):
-        self.dude = dude
-        self.game_display = None
-        self.dice_display = None
-        self.status_display = None
-        self.status_message = "Status:"
-        self.dice = []
-        for i in range(dicecount):
-            self.dice.append(random.randint(0,dicelim))
-    def roll(self,dicelim):
-        for x,i in enumerate(self.dice):
-            self.dice[x] = random.randint(0,dicelim)
+
 
 class DiceGame():
     def __init__(self,category_withchannels_innit):
@@ -340,7 +328,6 @@ class DiceGame():
         print(f"DiceGame it's {self.players[self.player_turn_tracker].dude.nick}'s turn")
 
     async def run(self,message,user_channel):
-        # if message.author == self.players[self.player_turn_tracker].dude.nick:
         if self.state == None:
             if message.author.nick == message.channel.name:
                 if message.content.lower()=='ready':
@@ -453,9 +440,153 @@ class DiceGame():
                 p.dice_display = await chann.send(dic)
 
 
+class Player():
+    def __init__(self,dude,dicelim=3,dicecount=3):
+        self.dude = dude
+        self.game_display = None
+        self.dice_display = None
+        self.status_display = None
+        self.status_message = "Status:"
+        self.white_cards = []
+        self.black_cards = []
+        self.dice = []
+        for i in range(dicecount):
+            self.dice.append(random.randint(0,dicelim))
+    def roll(self,dicelim):
+        for x,i in enumerate(self.dice):
+            self.dice[x] = random.randint(0,dicelim)
+
+from utternonsense import WHITE_CARDS,BLACK_CARDS
+class UtterGame():
 
 
 
+    def __init__(self,category_withchannels_innit):
+        self.category = category_withchannels_innit
+        self.players = []
+        self.ready_players = []
+        self.handlim = 6
+        self.player_turn_tracker = 0
+        self.state = None
+        self.utter_commands = {
+            'pick':self.pick,
+            'judge': self.judge,
+        }
+        self.white_cards = WHITE_CARDS.copy()
+        self.black_cards = BLACK_CARDS.copy()
+        self.the_black_card = None
+
+    def draw_white_cards(self,player):
+        while(len(player.white_cards) <= self.handlim ):
+            player.white_cards.append(self.white_cards.pop(random.randint(0,len(self.white_cards)-1)))
+
+    def draw_black_card(self):
+        self.the_black_card = self.black_cards.pop(random.randint(0,len(self.black_cards)-1))
+
+
+
+    def pick(self):
+        pass
+    def judge(self):
+        pass
+
+    async def run(self,message,user_channel):
+        if self.state == None:
+            if message.author.nick == message.channel.name:
+                if message.content.lower()=='ready':
+                    if message.author not in self.ready_players:
+                        self.ready_players.append(message.author)
+                        for x,d in enumerate(self.players):
+                            if d.dude.nick == message.author.nick:
+                                if self.players[x].game_display == None:
+                                    await message.channel.purge(limit=100)
+                                    self.players[x].game_display = await user_channel.send("Waiting for **EVERYONE** to ready up...")
+                                else:
+                                    await message.channel.purge(limit=1)
+                                break
+
+
+                if len(self.ready_players) == len(self.players) :
+                    self.state = 'play'
+                    await self.update_screens()
+
+        elif self.state == 'play':
+            if message.author.nick == message.channel.name:
+                msg = message.content.split(' ')
+                if msg[0].lower() in self.utter_commands:
+                    await self.utter_commands[msg[0].lower()](message,user_channel)
+                else:
+                    await message.channel.purge(limit=1)
+                count = 0
+                winner = None
+                for i in self.players:
+                    if len(i.dice) != 0:
+                        count += 1
+                        winner = i
+                if count ==1:
+                    self.state = 'end'
+                    await self.update_statuses_end(winner)
+
+        elif self.state == 'end':
+            pass
+
+    def init_players(self,players):
+        for p in players:
+            self.players.append(Player(p))
+            print(f"UtterGame init_Player: {p}")
+        self.player_turn_tracker = random.randint(0,len(self.players)-1)
+        for player in self.players:
+            self.draw_white_cards(player)
+        print(f"UtterGame it's {self.players[self.player_turn_tracker].dude.nick}'s turn")
+        self.draw_black_card()
+
+
+    async def   update_screens(self):
+        screen = ''
+        screen +='-------------------------------------\n'
+        screen +='__Players:__\n'
+        for x, p in enumerate(self.players):
+            screen += ' ' + p.dude.nick
+            if x == self.player_turn_tracker:
+                screen += "  <-- Judge"
+            screen += '\n'
+        screen +='-------------------------------------\n'
+
+
+        for x, p in enumerate(self.players):
+            temp = ''
+            if x != self.player_turn_tracker:
+                temp += f"It is **{self.players[self.player_turn_tracker].dude.nick}**'s turn to Judge. They are Judging you on your: **{self.the_black_card}** impression. Make it a good one.\n"
+                temp += f"You must **pick** a card that you want to do an impression on.\n"
+            else:
+                temp += f"It is **Your** turn. Judge people on their: **{self.the_black_card}** impression\n"
+                temp += "You are judging. Wait till everyone has picked a card\n"
+            temp += '-------------------------------------\n'
+            try:
+                await p.game_display.edit(content=f"{screen + temp}")
+            except:
+                for chann in self.category.channels:
+                    if chann.name == p.dude.nick:
+                        break
+                p.game_display = await chann.send(screen + temp)
+
+            dic = '\n'
+            count = 0
+            for w in p.white_cards:
+                dic += f'{count} - '+ w+'\n'
+                count += 1
+
+
+            if dic == '\n':
+                dic = 'none' + dic
+            try:
+                await p.dice_display.edit(content=f"{dic}")
+            except:
+                for chann in self.category.channels:
+                    if chann.name == p.dude.nick:
+                        break
+
+                p.dice_display = await chann.send(dic)
 
 
 
@@ -469,10 +600,11 @@ class Game(commands.Cog):
         self.game = None
         self.state = None
         self.players = []
-        self.supported_games = ['dice']
+        self.supported_games = ['dice','utter']
         self.bot_category = None
         self.gameimg  ={
-            'dice': dice_o
+            'dice': dice_o,
+            'utter': 'placeholder'
         }
         self.functionDict = {
             None: self.none,
@@ -537,7 +669,8 @@ class Game(commands.Cog):
                 if self.game_type == 'dice':
                     self.game = DiceGame(self.bot_category)
                     print(self.game)
-
+                elif self.game_type == 'utter':
+                    self.game = UtterGame(self.bot_category)
                 await ctx.send(f"When everyone is connected to voice channel: {ctx.author.voice.channel} type: '!game start' to begin {self.game_type} {self.gameimg[self.game_type]}")
             else:
                 await ctx.send(f"Invalid Game Type: {command}")

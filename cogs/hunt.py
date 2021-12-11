@@ -69,7 +69,7 @@ class Hunt(commands.Cog):
     @commands.Cog.listener()
     async def on_ready(self):
         print(f'Hunt Loaded')
-        self.server = self.client.get_guild(437778883744628736)
+        self.server = self.client.get_guild(911398925804646421)
         for chan in self.server.channels:
             if chan.name == 'bot-spam':
                 self.chat_channel = chan
