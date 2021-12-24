@@ -59,21 +59,23 @@ class Bbb(commands.Cog):
         if deleteflag:
             await ctx.channel.purge(limit=1)
         if ctx == None:
-            server = self.client.get_guild(911398925804646421)
+            server = self.client.get_guild(877713599894798367)#911398925804646421
         else:
             server = ctx.message.guild
-        voicechannels = []
-        for chan in server.channels:
-            if isinstance(chan,discord.VoiceChannel):
-                if len(chan.members)>0:
-                    voicechannels.append(chan)
-        if len(voicechannels) == 0:
-            return
+
         # if number_of_bs >= 6:
         #     await ctx.send(f'{ctx.message.author} tried to be cancerous by trying to have the bot say {number_of_bs}')
         #     number_of_bs = 5
 
         for i in range(number_of_bs):
+            voicechannels = [].copy()
+            for chan in server.channels:
+                if isinstance(chan, discord.VoiceChannel):
+                    if len(chan.members) > 0:
+                        voicechannels.append(chan)
+            if len(voicechannels) == 0:
+                return
+
             # await asyncio.sleep(np.random.randint(60*10))
             randindex = np.random.randint(len(voicechannels))
             randchannel = voicechannels[randindex]
