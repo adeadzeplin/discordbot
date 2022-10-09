@@ -45,6 +45,7 @@ class Misc(commands.Cog):
     async def on_message(self, message):
         booey = ['booey','hoo','hooh','dub','baba','bababooey','bobby','benis','boofer','coochie','cunt','cease','why','ok','bruh','dude','pussy','later','when','uh',
                  'ew','gross','dood','<:NUT:671476999558135868>']
+        ##print(message.content)
         if message.author != self.client.user:
             if message.content.startswith('!'):
                 pass
@@ -52,10 +53,7 @@ class Misc(commands.Cog):
                 await message.channel.send('```\n<:cardbackgrn:747592966704463965>\n```')
                 await asyncio.sleep(3)
                 await message.channel.purge(limit=2)
-            elif self.checklist(booey,message.content):
-                # await asyncio.sleep(random.randint(1,10))
-                # await message.channel.send(self.returnlist(message.content.split(' '),booey))
-                print(message.content)
+
 
 
 def setup(client):
