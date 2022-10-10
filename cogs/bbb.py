@@ -152,7 +152,7 @@ class Bbb(commands.Cog):
             for dude in vc.channel.members:
                 if dude.id == BOTID:
                     break
-            await dude.edit(nick=sound_name)
+            #await dude.edit(nick=sound_name)
 
 
             disconflag = False
