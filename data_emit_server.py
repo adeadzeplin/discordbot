@@ -21,7 +21,7 @@ def connect(sid, environ):
 def on_message(sid):
     try:
         out_data = service.data_queue['t2s']['data'].get(0)
-        print('data being sent to client')
+        #print('data being sent to client')
     except:
         out_data = 'None'
     sio.emit('chat_data',out_data)
@@ -51,7 +51,7 @@ def disconnect(sid):
 def data_server(q,port=3333):
     print('data server starting')
     service.data_queue = q
-    eventlet.wsgi.server(eventlet.listen(('', port)), service.app, log_output=False)
+    eventlet.wsgi.server(eventlet.listen(('localhost', port)), service.app, log_output=False)
 
 if __name__ == '__main__':
     data_server(None)

@@ -746,5 +746,5 @@ class Game(commands.Cog):
     #         await self.bot_category
 
 
-def setup(client):
-    client.add_cog(Game(client))
+async def setup(client):
+    await client.add_cog(Game(client))

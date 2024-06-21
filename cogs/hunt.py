@@ -331,5 +331,5 @@ class Hunt(commands.Cog):
         # for i,cli in enumerate(self.client.voice_clients):
         #     await self.client.voice_clients[i].disconnect()
         # print(f"{ctx.message.author} called the b command in {ctx.message.guild} and it ran {number_of_bs} times")
-def setup(client):
-    client.add_cog(Hunt(client))
+async def setup(client):
+    await client.add_cog(Hunt(client))

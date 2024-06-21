@@ -1,6 +1,7 @@
 import discord
 from discord.ext import commands
 from insult import insult
+import asyncio
 def is_guild_owner():
     def predicate(ctx):
         return ctx.guild is not None and ctx.guild.owner_id == ctx.author.id
@@ -43,8 +44,8 @@ class Admin(commands.Cog):
     @commands.command(aliases = ['r'])
     @commands.check_any(commands.is_owner())
     async def reload(self, ctx, extension):
-        self.client.unload_extension(f"cogs.{extension}")
-        self.client.load_extension(f"cogs.{extension}")
+        await self.client.unload_extension(f"cogs.{extension}")
+        await self.client.load_extension(f"cogs.{extension}")
         await ctx.send(f"Reloaded cog: {extension}")
 
     @commands.command()
@@ -66,5 +67,5 @@ class Admin(commands.Cog):
             await ctx.send(f"{index}")
         await ctx.send(f"That's everything i could find")
 
-def setup(client):
-    client.add_cog(Admin(client))
+async def setup(client):
+    await client.add_cog(Admin(client))

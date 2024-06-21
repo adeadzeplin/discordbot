@@ -49,12 +49,12 @@ class Misc(commands.Cog):
         if message.author != self.client.user:
             if message.content.startswith('!'):
                 pass
-            elif '<@!725508807077396581>' in message.content:
-                await message.channel.send('```\n<:cardbackgrn:747592966704463965>\n```')
+            elif '<@725508807077396581>' in message.content:
+                await message.channel.send(':eyes:')
                 await asyncio.sleep(3)
                 await message.channel.purge(limit=2)
+0
 
 
-
-def setup(client):
-    client.add_cog(Misc(client))
+async def setup(client):
+    await client.add_cog(Misc(client))

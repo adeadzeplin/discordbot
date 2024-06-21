@@ -21,7 +21,7 @@ class Rude(commands.Cog):
         if InsultTarget == "ctx.message.author":
             InsultTarget = ctx.message.author
 
-        botnames = ['<@!725508807077396581>',
+        botnames = ['<@725508807077396581>',
                     'e-bot',
                     'E-bot',
                     'ebot',
@@ -59,5 +59,5 @@ class Rude(commands.Cog):
         response = insultdatabase.printoutDB()
         await ctx.send(response)
 
-def setup(client):
-    client.add_cog(Rude(client))
+async def setup(client):
+    await client.add_cog(Rude(client))

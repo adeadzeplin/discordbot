@@ -2,6 +2,7 @@
 
 import discord
 import os
+import asyncio
 from discord.ext import commands
 from dotenv import load_dotenv
 
@@ -33,10 +34,10 @@ client = commands.Bot(command_prefix='!', intents=intents)
 #     print(f'Bot removed everything in the channel: {ctx.channel.name}')
 #     await ctx.channel.purge()
 
-
-for filename in os.listdir('./cogs'):
-    if filename.endswith('.py'):
-        client.load_extension(f'cogs.{filename[:-3]}')
+def init_discord_cogs():
+    for filename in os.listdir('./cogs'):
+        if filename.endswith('.py'):
+            asyncio.run(client.load_extension(f'cogs.{filename[:-3]}'))
 
 @client.event
 async def on_ready():
@@ -45,8 +46,9 @@ async def on_ready():
     print('------')
 
 def run_discordbot(p):
+    init_discord_cogs()
     client.pipes = p
-    client.run(TOKEN)
+    client.run(TOKEN,log_handler=None)
 
 
 if __name__ == "__main__":
