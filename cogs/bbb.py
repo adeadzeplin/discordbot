@@ -147,9 +147,13 @@ class Bbb(commands.Cog):
         connected = False
         disconnect_rate = 0
         snds = self.load_soundfiles()
-
+        vc = None
         for i in range(number_of_bs):
+            if vc is not None:
+                connected = vc.is_connected()
+            print("we are connected:", connected)
             if connected == False:
+
                 voicechannels = [].copy()
                 for chan in server.channels:
                     if isinstance(chan, discord.VoiceChannel):
@@ -157,7 +161,7 @@ class Bbb(commands.Cog):
                             voicechannels.append(chan)
                 if len(voicechannels) == 0:
                     return
-
+                #
                 # await asyncio.sleep(np.random.randint(60*10))
                 randindex = np.random.randint(len(voicechannels))
                 randchannel = voicechannels[randindex]
@@ -168,12 +172,16 @@ class Bbb(commands.Cog):
                 #         skipjoinflag = True
                 # await asyncio.sleep(np.random.randint(3)) # np.random.randint(60*2)
                 # if skipjoinflag == False:
+                if vc is not None:
+                    await vc.disconnect(force=True)
                 vc = await randchannel.connect(timeout=20.0,reconnect=True)
-                connected = True
-
-
-
-
+                #print("vc:",vc.is_connected())
+                connected = vc.is_connected()
+                print("we arent conneced... Now we are:",connected)
+            #
+            #
+            #
+            #
             # for times in range(0,np.random.randint(1,3)):
             # print(len(vids))
             # print(Called_from_Queue)
@@ -186,64 +194,69 @@ class Bbb(commands.Cog):
                     randsnd = np.random.randint(len(snds))
             else:
                 randsnd = np.random.randint(len(snds))
-
-
-
-
-
-
+            #
+            #
+            #
+            #
+            #
+            #
             for dude in vc.channel.members: # Play function call happens in a loop checking if the bot is still conectted to voice. Because the bot can be disconnected before playing and will break everything
                 if dude.id == BOTID:
                     vc.play(discord.FFmpegPCMAudio(snds[randsnd]))#,executable='C:/ffmpeg/bin/ffmpeg',options=['-guess_layout_max 0','-i']
                     break
-
+            #
             if snds[randsnd] not in self.sound_data:
                 self.sound_data[snds[randsnd]] = self.data_map_template.copy()
-
+            #
             self.sound_data[snds[randsnd]]["total_plays"] += 1
-
+            #
             if snds[randsnd] == self.prev:
                 self.consect_count += 1
                 if self.consect_count > self.sound_data[snds[randsnd]]["longest_chain"]:
                     self.sound_data[snds[randsnd]]["longest_chain"] = self.consect_count
-
+                    #
                     for dude in vc.channel.members:  # Play function call happens in a loop checking if the bot is still conectted to voice. Because the bot can be disconnected before playing and will break everything
                         if dude.id == BOTID:
                             vc.play(discord.FFmpegPCMAudio(snds[   snds.index("wombocomboa")    ]))  # ,executable='C:/ffmpeg/bin/ffmpeg',options=['-guess_layout_max 0','-i']
                             break
             else:
                 self.consect_count = 1
-
+            #
             self.prev = snds[randsnd]
-
-
-            if not No_random_delay:
-                await asyncio.sleep(np.random.randint(5, 20 ))
-
-
-
-
+            #
+            #
 
             if ctx != None:
                 print(f"bbbbing in {ctx.message.guild} sound file {snds[randsnd]}")
             else:
                 print(f"bbbbing sound file: '{snds[randsnd].replace('./sounds/','').replace('.wav','')}'")
+
+
+            if not No_random_delay:
+                await asyncio.sleep(np.random.randint(5, 20 ))
+            #
+            #
+            #
+            #
+            #
+
             while vc.is_playing():
+                print(f"still playing")
                 await asyncio.sleep(.2)
             await asyncio.sleep(2)
-
+            #
             sound_name = snds[randsnd]
             sound_name = sound_name.split(".")[1]
             sound_name = sound_name.split("/")
             sound_name = sound_name[len(sound_name) - 1]
             self.sound_history.append(sound_name)
-
-            for dude in vc.channel.members:
-                if dude.id == BOTID:
-                    break
+            #
+            # for dude in vc.channel.members:
+            #     if dude.id == BOTID:
+            #         break
             #await dude.edit(nick=sound_name)
-
-
+            #
+            #
             # disconflag = False
             # if connected == True:
             #     rand_diconnect_rate_max = 10
@@ -265,12 +278,12 @@ class Bbb(commands.Cog):
             #                 disconnect_rate = random.randint(0, rand_diconnect_rate_max)
             # 
             #         await asyncio.sleep(5)
-
-
+            #
+            #
             print(f"{i+1} of {number_of_bs}")
             if i%10==0:
                 self.update_bbb_log()
-
+            #
         if connected == True:
             for dude in vc.channel.members:
                 if dude.id == BOTID:
