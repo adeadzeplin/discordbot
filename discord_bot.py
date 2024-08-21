@@ -6,51 +6,37 @@ import asyncio
 from discord.ext import commands
 from dotenv import load_dotenv
 
+# Disable logging
+import logging
+logging.getLogger('discord').setLevel(logging.ERROR)
+logging.getLogger('discord.http').setLevel(logging.ERROR)
+logging.getLogger('discord.gateway').setLevel(logging.ERROR)
+
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
 intents = discord.Intents.all()
 intents.members = True
-client = commands.Bot(command_prefix='!', intents=intents)
+client = commands.Bot(command_prefix='!', intents=intents, help_command=None)
 
-
-
-# @client.command()
-# async def load(ctx,extension):
-#     client.load_extension(f"cogs.{extension}")
-#     await ctx.send(f"Loaded cog: {extension}")
-# @client.command()
-# async def unload(ctx,extension):
-#     client.unload_extension(f"cogs.{extension}")
-#     await ctx.send(f"Unoaded cog: {extension}")
-#
-# @client.command()
-# async def reload(ctx,extension):
-#     client.unload_extension(f"cogs.{extension}")
-#     client.load_extension(f"cogs.{extension}")
-#     await ctx.send(f"Reloaded cog: {extension}")
-#
-# @client.command()
-# async def clear(ctx):
-#     print(f'Bot removed everything in the channel: {ctx.channel.name}')
-#     await ctx.channel.purge()
-
-def init_discord_cogs():
+async def init_discord_cogs():
     for filename in os.listdir('./cogs'):
         if filename.endswith('.py'):
-            asyncio.run(client.load_extension(f'cogs.{filename[:-3]}'))
+            try:
+                await client.load_extension(f'cogs.{filename[:-3]}')
+                print(f'{filename[:-3]} Loaded')
+            except Exception as e:
+                print(f'Failed to load {filename[:-3]}: {str(e)}')
 
 @client.event
 async def on_ready():
     print(f'Bot logged in as : {client.user.name}')
-    # print(client.user.id)
     print('------')
+    await init_discord_cogs()
 
-def run_discordbot(p):
-    init_discord_cogs()
-    client.pipes = p
-    client.run(TOKEN,log_handler=None)
-
+def run_discordbot(p=None):
+    if p:
+        client.pipes = p
+    client.run(TOKEN, log_handler=None)
 
 if __name__ == "__main__":
-    run_discordbot("where am i?")
-
+    run_discordbot()

@@ -1,57 +1,59 @@
+import asyncio
+import aiohttp
 from aiohttp import web
 import socketio
-import eventlet
-import random
-sio = socketio.Server()
 
-
+sio = socketio.AsyncServer(async_mode='aiohttp')
+app = web.Application()
+sio.attach(app)
 
 class dataServer():
     def __init__(self):
         self.data_queue = None
-        self.app =socketio.WSGIApp(sio)
+
 service = dataServer()
 
 @sio.event
-def connect(sid, environ):
+async def connect(sid, environ):
     print('Client connected ')
-    sio.emit('init')
+    await sio.emit('init')
 
 @sio.on('req')
-def on_message(sid):
+async def on_message(sid):
     try:
-        out_data = service.data_queue['t2s']['data'].get(0)
-        #print('data being sent to client')
+        out_data = service.data_queue['t2s']['data'].get_nowait()
     except:
         out_data = 'None'
-    sio.emit('chat_data',out_data)
+    await sio.emit('chat_data', out_data)
 
 @sio.on('insult')
-def on_message(sid):
+async def on_message(sid):
     import insult
     out_data = {
-        'insult': insult.insult(formated=False,adjmax=2,article=False)
+        'insult': insult.insult(formated=False, adjmax=2, article=False)
     }
-    sio.emit('insult',out_data)
+    await sio.emit('insult', out_data)
 
 @sio.on('bbb')
-def on_message(sid,data):
-    # print(sid,data)
+async def on_message(sid, data):
     to_discord_bot = {
         'filename': data
     }
-    service.data_queue['s2d']['bbb'].put(to_discord_bot)
-
+    service.data_queue['s2d']['bbb'].put_nowait(to_discord_bot)
 
 @sio.event
-def disconnect(sid):
+async def disconnect(sid):
     print('Client disconnect')
 
-
-def data_server(q,port=3333):
+async def data_server(q, port=3333):
     print('data server starting')
     service.data_queue = q
-    eventlet.wsgi.server(eventlet.listen(('localhost', port)), service.app, log_output=False)
+    runner = web.AppRunner(app)
+    await runner.setup()
+    site = web.TCPSite(runner, 'localhost', port)
+    await site.start()
+    print(f"Server started at http://localhost:{port}")
+    await asyncio.Event().wait()  # run forever
 
 if __name__ == '__main__':
-    data_server(None)
+    asyncio.run(data_server(None))

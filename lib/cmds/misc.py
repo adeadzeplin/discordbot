@@ -1,17 +1,22 @@
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 import os
 from requests import get
 
-
-
 def help(bot, prefix,cmds):
+    # TODO: Implement error handling for message sending failures
     bot.send_message("Registered commands "+ ", ".join([f"{prefix}{cmd}" for cmd in sorted(cmds.keys())]))
 
 def hello(bot,user,*args):
+    # TODO: Implement error handling for message sending failures
     bot.send_message(f"Hey {user['name']}! {' '.join(args)} to you too!")
 
 def info(bot,user,*args):
     if len(args) >0:
         if args[0] == 'koth':
+            # TODO: Implement error handling for message sending failures
             bot.send_message(
                 f"To play King of the hill: "
                 f"'join' - when a new game is beginning.    "
@@ -20,6 +25,7 @@ def info(bot,user,*args):
                 f"The distance between each ring is 5 power.    "
                 f"You can privately message the bot your input to hide it from other players.   "
             )
+
 def pachinko(bot,user,*args):
     if bot.pachinko_flag == False and user['name'] == 'adeadzeplin':
         bot.pachinko_flag = True
@@ -30,11 +36,13 @@ def pachinko(bot,user,*args):
             'user': user,
             'args': args
         }
+        # TODO: Implement error handling for pipe communication failures
         bot.PIPES['t2s']['data'].put(data)
 
 
 def king(bot,user,*args):
     if bot.king_flag == False and user['name'] == 'adeadzeplin':
+        # TODO: Implement error handling for message sending failures
         bot.send_message(f"Sending a game init request {user['name']}!")
         bot.hunt_flag = False
         bot.king_flag = True
@@ -45,6 +53,7 @@ def king(bot,user,*args):
             'user': user,
             'args':args
         }
+        # TODO: Implement error handling for pipe communication failures
         bot.PIPES['t2s']['data'].put(data)
 
 
@@ -56,12 +65,14 @@ def king(bot,user,*args):
         }
         resp = get(url,headers=headers).json()
 
+        # TODO: Implement error handling for message sending failures
         bot.send_message(f"{user['name']} Joined king of the hill")
         data = {
             'user': user,
             'args': args,
             'logo': resp['users'][0]['logo']
         }
+        # TODO: Implement error handling for pipe communication failures
         bot.PIPES['t2s']['data'].put(data)
 
     elif (user['name'] == 'adeadzeplin'):
@@ -69,17 +80,20 @@ def king(bot,user,*args):
             'user': user,
             'args': args
         }
+        # TODO: Implement error handling for pipe communication failures
         bot.PIPES['t2s']['data'].put(data)
 
 
 
 def bbb(bot,user,*args):
+    # TODO: Implement error handling for invalid sound files
     bot.send_message(f"Sending a BBB request {user['name']}!")
     file_name = None
     if len(args) == 1:
         for file in os.listdir('./sounds'):
             if args[0] == file[:-4]:
                 file_name = file[:-4]
+                # TODO: Replace print statements with proper logging
                 # print(file_name, file[:-4])
 
     data = {
@@ -87,10 +101,13 @@ def bbb(bot,user,*args):
         'filename':file_name
     }
 
+    # TODO: Implement error handling for pipe communication failures
     bot.PIPES['t2d']['bbb'].put(data)
 
 def basilisk(bot,user,*args):
+    # TODO: Implement proper error handling for invalid game states
     if bot.hunt_flag == False and user['name'] == 'adeadzeplin':
+        # TODO: Implement error handling for message sending failures
         bot.send_message(f"Sending a basilisk request {user['name']}!")
         bot.hunt_flag = True
         bot.king_flag = False
@@ -102,6 +119,7 @@ def basilisk(bot,user,*args):
             'command': None
         }
         temp = args[0].lower()
+        # TODO: Consider using a dictionary for command mapping to improve readability
         if temp in ['up','u','w']:
             data['command'] = 'w'
         elif temp in ['down','s']:
@@ -116,7 +134,8 @@ def basilisk(bot,user,*args):
             data['command'] = args[0]
 
         if data['command'] == None:
-            # bot.send_message(f"Sending a BBB request {user['name']}!")
+            # TODO: Implement proper error handling or feedback for invalid commands
             pass
         else:
+            # TODO: Implement error handling for pipe communication failures
             bot.PIPES['t2d']['hunt'].put(data)

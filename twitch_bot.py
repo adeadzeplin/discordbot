@@ -27,40 +27,38 @@ class Bot(commands.Bot):
         self.CHANNEL = f"#{CHANNEL_NAME}"
         self.PIPES = p
 
+        # Initialize game flags
+        # REVIEW: Consider using an enum or a more structured approach for game states
         self.hunt_flag = False
         self.king_flag = False
         self.pachinko_flag = False
 
-        # Initialise our Bot with our access token, prefix and a list of channels to join on boot...
-        # prefix can be a callable, which returns a list of strings or a string...
-        # initial_channels can also be a callable which returns a list of strings...
+        # Initialize the Bot with Twitch credentials
+        # TODO: Consider moving these credentials to a separate configuration file
         super().__init__(token=f'{ACCESS_TOKEN}', prefix='!', initial_channels=['adeadzeplin'])
 
     async def event_ready(self):
-        # Notify us when everything is ready!
-        # We are logged in and ready to chat and use commands...
+        # Notify when the bot is ready and logged in
         print(f'Logged in as | {self.nick}')
         print(f'User id is | {self.user_id}')
 
     @commands.command()
     async def hello(self, ctx: commands.Context):
-        # Here we have a command hello, we can invoke our command with our prefix and command name
-        # e.g ?hello
-        # We can also give our commands aliases (different names) to invoke with.
-
-        # Send a hello back!
-        # Sending a reply back to the channel is easy... Below is an example.
+        # Simple hello command
         await ctx.send(f'Hello {ctx.author.name}!')
 
     @commands.command()
     async def ping(self, ctx: commands.Context):
-        randperson = random.randint(0,len(ctx.chatters))
+        # Ping a random chatter
+        # TODO: Consider adding error handling for empty chatter list
+        randperson = random.randint(0, len(ctx.chatters))
         chatter_list = list(ctx.chatters)
-        await ctx.send(f"Hey {chatter_list[randperson].name }! you were randomly pinged by {ctx.author.name}!")
-
+        await ctx.send(f"Hey {chatter_list[randperson].name}! you were randomly pinged by {ctx.author.name}!")
 
     @commands.command()
     async def bbb(self, ctx: commands.Context):
+        # BBB command for sound playback
+        # TODO: Implement proper error handling for file not found
         await ctx.send(f"Sending a BBB request {ctx.author.name}!")
         file_name = None
         msg = ctx.message.content
@@ -75,22 +73,20 @@ class Bot(commands.Bot):
             'filename': file_name
         }
 
+        # REVIEW: Consider if this pipes mechanism is the best way to handle inter-process communication
         self.PIPES['t2d']['bbb'].put(data)
 
     async def event_message(self, message):
-        # Messages with echo set to True are messages sent by the bot...
-        # For now we just want to ignore them...
+        # Ignore messages sent by the bot
         if message.echo:
             return
 
-        # Print the contents of our message to console...
+        # Print message content to console
+        # TODO: Implement proper logging instead of print statements
         print(message.content)
 
-        # Since we have commands and are overriding the default `event_message`
-        # We must let the bot know we want to handle and invoke our commands...
+        # Handle commands in the message
         await self.handle_commands(message)
-
-
 
     @commands.command()
     async def king(self, ctx: commands.Context):
@@ -134,5 +130,9 @@ class Bot(commands.Bot):
 def run_twitchbot(p):
     bot = Bot(p)
     bot.run()
-if __name__ == "__main__":
-    run_twitchbot("fuck")
+
+# OVERALL NOTES:
+# TODO: Implement comprehensive error handling throughout the script
+# TODO: Set up a logging system for better debugging and monitoring
+# TODO: Move configuration (like credentials and game flags) into a separate config file
+# REVIEW: Evaluate the 'pipes' mechanism and consider alternatives if necessary

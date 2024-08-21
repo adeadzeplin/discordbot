@@ -371,7 +371,9 @@ class DiceGame():
         for p in self.players:
             p.status_message = f'{winner.dude.nick} WINS!'
         await self.update_screens()
-    async def   update_screens(self):
+    async def update_screens(self):
+        # TODO: Consider breaking this method into smaller, more manageable functions
+        # TODO: Implement error handling for message editing failures
         screen = ''
         screen +='-------------------------------------\n'
         screen +='__Players:__\n'
@@ -409,6 +411,7 @@ class DiceGame():
             try:
                 await p.game_display.edit(content=f"{screen + temp}")
             except:
+                # TODO: Implement proper error handling and logging here
                 for chann in self.category.channels:
                     if chann.name == p.dude.nick:
                         break
@@ -417,12 +420,14 @@ class DiceGame():
             try:
                 await p.status_display.edit(content=p.status_message)
             except:
+                # TODO: Implement proper error handling and logging here
                 for chann in self.category.channels:
                     if chann.name == p.dude.nick:
                         break
                 p.status_display = await chann.send(p.status_message)
 
 
+            # TODO: Consider moving this dice display logic to a separate method
             dic = ''
             for d in p.dice:
                 dic += dice_emotes[d]
@@ -433,11 +438,17 @@ class DiceGame():
             try:
                 await p.dice_display.edit(content=f"{dic}")
             except:
+                # TODO: Implement proper error handling and logging here
                 for chann in self.category.channels:
                     if chann.name == p.dude.nick:
                         break
 
                 p.dice_display = await chann.send(dic)
+
+    # TODO: Add docstrings to all methods explaining their purpose and parameters
+    # TODO: Implement comprehensive error handling throughout the class
+    # REVIEW: Consider optimizing the screen update process to reduce the number of API calls
+    # TODO: Implement a method to handle game state persistence in case of crashes or restarts
 
 
 class Player():
