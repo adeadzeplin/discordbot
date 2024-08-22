@@ -1,0 +1,882 @@
+2024-08-21 17:21:59,208 - discord_bot - ERROR - Test error message
+2024-08-21 17:28:58,557 - discord_bot - ERROR - Test error message
+2024-08-21 17:28:59,026 - discord_bot - INFO - admin Loaded
+2024-08-21 17:28:59,310 - discord_bot - INFO - bbb Loaded
+2024-08-21 17:28:59,312 - discord_bot - INFO - custom_help Loaded
+2024-08-21 17:28:59,314 - discord_bot - INFO - misc Loaded
+2024-08-21 17:29:01,578 - discord_bot - INFO - Bot logged in as : E-Bot
+2024-08-21 17:29:01,578 - discord_bot - INFO - ------
+2024-08-21 17:32:43,710 - discord_bot - ERROR - Test error message
+2024-08-21 17:32:44,097 - discord_bot - INFO - admin Loaded
+2024-08-21 17:32:44,504 - discord_bot - INFO - bbb Loaded
+2024-08-21 17:32:44,505 - discord_bot - INFO - custom_help Loaded
+2024-08-21 17:32:44,506 - discord_bot - INFO - misc Loaded
+2024-08-21 17:32:46,799 - discord_bot - INFO - Bot logged in as : E-Bot
+2024-08-21 17:32:46,799 - discord_bot - INFO - ------
+2024-08-21 17:35:18,746 - discord_bot - INFO - Bot is starting...
+2024-08-21 17:35:19,117 - discord_bot - INFO - admin Loaded
+2024-08-21 17:35:19,388 - discord_bot - INFO - bbb Loaded
+2024-08-21 17:35:19,390 - discord_bot - INFO - custom_help Loaded
+2024-08-21 17:35:19,391 - discord_bot - INFO - misc Loaded
+2024-08-21 17:35:21,769 - discord_bot - INFO - Bot logged in as : E-Bot
+2024-08-21 17:35:21,770 - discord_bot - INFO - ------
+2024-08-21 17:36:10,715 - discord_bot - INFO - Bot is starting...
+2024-08-21 17:36:11,036 - discord_bot - INFO - admin Loaded
+2024-08-21 17:36:11,374 - discord_bot - INFO - bbb Loaded
+2024-08-21 17:36:11,375 - discord_bot - INFO - custom_help Loaded
+2024-08-21 17:36:11,376 - discord_bot - INFO - misc Loaded
+2024-08-21 17:36:13,760 - discord_bot - INFO - Bot logged in as : E-Bot
+2024-08-21 17:36:13,760 - discord_bot - INFO - ------
+2024-08-21 17:38:14,800 - discord_bot - INFO - Bot is starting...
+2024-08-21 17:38:15,201 - discord_bot - INFO - admin Loaded
+2024-08-21 17:38:15,710 - discord_bot - INFO - bbb Loaded
+2024-08-21 17:38:15,711 - discord_bot - INFO - custom_help Loaded
+2024-08-21 17:38:15,712 - discord_bot - INFO - misc Loaded
+2024-08-21 17:38:18,188 - discord_bot - INFO - Bot logged in as : E-Bot
+2024-08-21 17:38:18,188 - discord_bot - INFO - ------
+2024-08-21 17:54:26,895 - discord_bot - INFO - Bot is starting...
+2024-08-21 17:54:27,207 - discord_bot - INFO - admin Loaded
+2024-08-21 17:54:27,504 - discord_bot - INFO - bbb Loaded
+2024-08-21 17:54:27,506 - discord_bot - INFO - custom_help Loaded
+2024-08-21 17:54:27,509 - discord_bot - INFO - misc Loaded
+2024-08-21 17:54:29,810 - discord_bot - INFO - Bot logged in as : E-Bot
+2024-08-21 17:54:29,810 - discord_bot - INFO - ------
+2024-08-21 17:54:29,812 - discord_bot - INFO - Misc Loaded
+2024-08-21 17:57:53,803 - discord_bot - INFO - Bot is starting...
+2024-08-21 17:57:54,221 - discord_bot - INFO - Admin cog added
+2024-08-21 17:57:54,221 - discord_bot - INFO - admin Loaded
+2024-08-21 17:57:54,652 - discord_bot - INFO - bbb Loaded
+2024-08-21 17:57:54,654 - discord_bot - INFO - custom_help Loaded
+2024-08-21 17:57:54,656 - discord_bot - INFO - misc Loaded
+2024-08-21 17:57:56,915 - discord_bot - INFO - Bot logged in as : E-Bot
+2024-08-21 17:57:56,915 - discord_bot - INFO - ------
+2024-08-21 17:57:56,916 - discord_bot - INFO - Admin Loaded
+2024-08-21 17:57:56,916 - discord_bot - INFO - Misc Loaded
+2024-08-21 18:00:30,225 - discord_bot - INFO - Bot is starting...
+2024-08-21 18:00:30,834 - discord_bot - INFO - Admin cog added
+2024-08-21 18:00:30,835 - discord_bot - INFO - Admin Loaded
+2024-08-21 18:00:31,163 - discord_bot - INFO - Bbb Loaded
+2024-08-21 18:00:31,164 - discord_bot - INFO - Custom_help Loaded
+2024-08-21 18:00:31,166 - discord_bot - INFO - Misc Loaded
+2024-08-21 18:00:31,166 - discord_bot - INFO - Bot is starting...
+2024-08-21 18:00:33,461 - discord_bot - INFO - Bot logged in as : E-Bot
+2024-08-21 18:00:33,461 - discord_bot - INFO - ------
+2024-08-21 18:00:33,461 - discord_bot - INFO - Admin Loaded
+2024-08-21 18:00:33,462 - discord_bot - INFO - Misc Loaded
+2024-08-21 18:03:06,834 - discord_bot - INFO - Bot is starting...
+2024-08-21 18:03:07,259 - discord_bot - INFO - Admin cog added
+2024-08-21 18:03:07,259 - discord_bot - INFO - Admin Loaded
+2024-08-21 18:03:07,548 - discord_bot - INFO - Bbb Loaded
+2024-08-21 18:03:07,550 - discord_bot - INFO - Custom_help Loaded
+2024-08-21 18:03:07,551 - discord_bot - INFO - Misc Loaded
+2024-08-21 18:03:07,551 - discord_bot - INFO - Bot is starting...
+2024-08-21 18:03:09,790 - discord_bot - INFO - Admin Loaded
+2024-08-21 18:03:09,790 - discord_bot - INFO - Misc Loaded
+2024-08-21 18:03:42,645 - discord_bot - INFO - Bot is starting...
+2024-08-21 18:03:43,075 - discord_bot - INFO - Custom_help Loaded
+2024-08-21 18:03:43,152 - discord_bot - INFO - Misc Loaded
+2024-08-21 18:03:43,153 - discord_bot - INFO - Bot is starting...
+2024-08-21 18:03:45,430 - discord_bot - INFO - Bot logged in as : E-Bot#8752
+2024-08-21 18:03:45,430 - discord_bot - INFO - ------
+2024-08-21 18:03:45,432 - discord_bot - INFO - Admin cog added
+2024-08-21 18:03:45,432 - discord_bot - INFO - Admin Loaded
+2024-08-21 18:03:45,433 - discord_bot - INFO - Misc Loaded
+2024-08-21 18:04:36,061 - discord_bot - INFO - Bot is starting...
+2024-08-21 18:04:36,346 - discord_bot - INFO - Custom_help Loaded
+2024-08-21 18:04:36,424 - discord_bot - INFO - Misc Loaded
+2024-08-21 18:04:36,424 - discord_bot - INFO - Bot is starting...
+2024-08-21 18:04:38,659 - discord_bot - INFO - Bot logged in as : E-Bot#8752
+2024-08-21 18:04:38,659 - discord_bot - INFO - ------
+2024-08-21 18:04:38,661 - discord_bot - INFO - Admin cog added
+2024-08-21 18:04:38,661 - discord_bot - INFO - Admin Loaded
+2024-08-21 18:04:38,661 - discord_bot - INFO - Misc Loaded
+2024-08-21 18:05:47,325 - discord_bot - INFO - Bot is starting...
+2024-08-21 18:05:47,608 - discord_bot - INFO - Bot is starting...
+2024-08-21 18:05:47,610 - discord_bot - INFO - Custom_help Loaded
+2024-08-21 18:05:47,694 - discord_bot - INFO - Misc Loaded
+2024-08-21 18:05:49,905 - discord_bot - INFO - Bot logged in as : E-Bot#8752
+2024-08-21 18:05:49,905 - discord_bot - INFO - ------
+2024-08-21 18:05:49,907 - discord_bot - INFO - Admin cog added
+2024-08-21 18:05:49,907 - discord_bot - INFO - Admin Loaded
+2024-08-21 18:05:49,909 - discord_bot - INFO - Misc Loaded
+2024-08-21 18:05:49,909 - discord_bot - INFO - Misc Loaded
+2024-08-21 18:07:02,079 - discord_bot - INFO - Bot is starting...
+2024-08-21 18:07:02,411 - discord_bot - INFO - Bot is starting...
+2024-08-21 18:07:02,412 - discord_bot - INFO - Custom_help Loaded
+2024-08-21 18:07:02,489 - discord_bot - INFO - Misc Loaded
+2024-08-21 18:07:02,490 - discord_bot - INFO - Admin cog added
+2024-08-21 18:07:02,490 - discord_bot - INFO - Admin Loaded
+2024-08-21 18:07:02,669 - discord_bot - INFO - Bbb Loaded
+2024-08-21 18:07:04,963 - discord_bot - INFO - Bot logged in as : E-Bot#8752
+2024-08-21 18:07:04,963 - discord_bot - INFO - ------
+2024-08-21 18:07:04,963 - discord_bot - INFO - Misc Loaded
+2024-08-21 18:07:04,964 - discord_bot - INFO - Admin Loaded
+2024-08-21 18:09:19,729 - discord_bot - INFO - Bot is starting...
+2024-08-21 18:09:20,049 - discord_bot - INFO - Bot is starting...
+2024-08-21 18:09:20,051 - discord_bot - INFO - Custom_help Loaded
+2024-08-21 18:09:20,143 - discord_bot - INFO - Misc Loaded
+2024-08-21 18:09:20,147 - discord_bot - INFO - Admin cog added
+2024-08-21 18:09:20,147 - discord_bot - INFO - Admin Loaded
+2024-08-21 18:09:20,396 - discord_bot - INFO - Bbb Loaded
+2024-08-21 18:09:22,731 - discord_bot - INFO - Bot logged in as : E-Bot#8752
+2024-08-21 18:09:22,731 - discord_bot - INFO - ------
+2024-08-21 18:12:29,553 - discord_bot - INFO - Custom_help Loaded
+2024-08-21 18:12:29,631 - discord_bot - INFO - Misc Loaded
+2024-08-21 18:12:29,632 - discord_bot - INFO - Admin cog added
+2024-08-21 18:12:29,633 - discord_bot - INFO - Admin Loaded
+2024-08-21 18:12:30,069 - discord_bot - INFO - Bbb Loaded
+2024-08-21 18:12:32,331 - discord_bot - INFO - Bot logged in as : E-Bot#8752
+2024-08-21 18:12:32,331 - discord_bot - INFO - ------
+2024-08-21 18:13:53,037 - discord_bot - INFO - Bot is starting...
+2024-08-21 18:13:53,140 - discord_bot - INFO - Admin cog added
+2024-08-21 18:13:55,555 - discord_bot - INFO - Bot logged in as : E-Bot#8752
+2024-08-21 18:13:55,555 - discord_bot - INFO - ------
+2024-08-21 18:13:55,555 - discord_bot - INFO - Help Loaded
+2024-08-21 18:13:55,556 - discord_bot - INFO - Misc Loaded
+2024-08-21 18:13:55,556 - discord_bot - INFO - Admin Loaded
+2024-08-21 18:13:55,556 - discord_bot - INFO - Bbb Loaded
+2024-08-21 18:15:45,406 - discord_bot - INFO - Bot is starting...
+2024-08-21 18:15:48,200 - discord_bot - INFO - Bot logged in as : E-Bot#8752
+2024-08-21 18:15:48,200 - discord_bot - INFO - ------
+2024-08-21 18:15:48,200 - discord_bot - INFO - Help Loaded
+2024-08-21 18:15:48,200 - discord_bot - INFO - Misc Loaded
+2024-08-21 18:15:48,200 - discord_bot - INFO - Admin Loaded
+2024-08-21 18:15:48,201 - discord_bot - INFO - Bbb Loaded
+2024-08-21 18:26:13,385 - discord_bot - INFO - Bot is starting...
+2024-08-21 18:26:15,962 - discord_bot - INFO - Bot logged in as : E-Bot#8752
+2024-08-21 18:26:15,962 - discord_bot - INFO - ------
+2024-08-21 18:26:15,962 - discord_bot - INFO - Help Loaded
+2024-08-21 18:26:15,963 - discord_bot - INFO - Misc Loaded
+2024-08-21 18:26:15,963 - discord_bot - INFO - Admin Loaded
+2024-08-21 18:26:15,963 - discord_bot - INFO - Bbb Loaded
+2024-08-21 18:33:28,992 - discord_bot - INFO - Bot is starting...
+2024-08-21 18:33:31,696 - discord_bot - INFO - Bot logged in as : E-Bot#8752
+2024-08-21 18:33:31,696 - discord_bot - INFO - ------
+2024-08-21 18:33:31,696 - discord_bot - INFO - Help Loaded
+2024-08-21 18:33:31,697 - discord_bot - INFO - Misc Loaded
+2024-08-21 18:33:31,697 - discord_bot - INFO - Admin Loaded
+2024-08-21 18:33:31,697 - discord_bot - INFO - Bbb Loaded
+2024-08-21 18:33:41,409 - discord_bot - ERROR - In bbb:
+2024-08-21 18:33:41,409 - discord_bot - ERROR - ClientException: Already playing audio.
+2024-08-21 18:33:41,412 - discord_bot - ERROR -   File "C:\Users\Dan\CODE\discordbot\venv\lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "c:\Users\Dan\CODE\discordbot\cogs\bbb.py", line 57, in bbb
+    await self._bbb_logic(ctx, number_of_bs, sound)
+  File "c:\Users\Dan\CODE\discordbot\cogs\bbb.py", line 156, in _bbb_logic
+    vc.play(discord.FFmpegPCMAudio(self.snds[randsnd]))
+  File "C:\Users\Dan\CODE\discordbot\venv\lib\site-packages\discord\voice_client.py", line 603, in play
+    raise ClientException('Already playing audio.')
+
+2024-08-21 18:33:43,997 - discord_bot - ERROR - In bbb:
+2024-08-21 18:33:43,998 - discord_bot - ERROR - ClientException: Already playing audio.
+2024-08-21 18:33:43,998 - discord_bot - ERROR -   File "C:\Users\Dan\CODE\discordbot\venv\lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "c:\Users\Dan\CODE\discordbot\cogs\bbb.py", line 57, in bbb
+    await self._bbb_logic(ctx, number_of_bs, sound)
+  File "c:\Users\Dan\CODE\discordbot\cogs\bbb.py", line 156, in _bbb_logic
+    vc.play(discord.FFmpegPCMAudio(self.snds[randsnd]))
+  File "C:\Users\Dan\CODE\discordbot\venv\lib\site-packages\discord\voice_client.py", line 603, in play
+    raise ClientException('Already playing audio.')
+
+2024-08-21 18:33:46,905 - discord_bot - ERROR - In bbb:
+2024-08-21 18:33:46,905 - discord_bot - ERROR - ClientException: Already playing audio.
+2024-08-21 18:33:46,906 - discord_bot - ERROR -   File "C:\Users\Dan\CODE\discordbot\venv\lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "c:\Users\Dan\CODE\discordbot\cogs\bbb.py", line 57, in bbb
+    await self._bbb_logic(ctx, number_of_bs, sound)
+  File "c:\Users\Dan\CODE\discordbot\cogs\bbb.py", line 156, in _bbb_logic
+    vc.play(discord.FFmpegPCMAudio(self.snds[randsnd]))
+  File "C:\Users\Dan\CODE\discordbot\venv\lib\site-packages\discord\voice_client.py", line 603, in play
+    raise ClientException('Already playing audio.')
+
+2024-08-21 18:51:04,179 - discord_bot - INFO - Bot is starting...
+2024-08-21 18:51:06,705 - discord_bot - INFO - Bot logged in as : E-Bot#8752
+2024-08-21 18:51:06,705 - discord_bot - INFO - ------
+2024-08-21 18:51:06,706 - discord_bot - INFO - Help Loaded
+2024-08-21 18:51:06,706 - discord_bot - INFO - Misc Loaded
+2024-08-21 18:51:06,706 - discord_bot - INFO - Admin Loaded
+2024-08-21 18:51:06,706 - discord_bot - INFO - Bbb Loaded
+2024-08-21 18:51:42,605 - discord_bot - ERROR - In bbb:
+2024-08-21 18:51:42,606 - discord_bot - ERROR - BadArgument: Converting to "int" failed for parameter "number_of_bs".
+2024-08-21 19:11:05,679 - discord_bot - INFO - Bot is starting...
+2024-08-21 19:11:08,265 - discord_bot - INFO - Bot logged in as : E-Bot#8752
+2024-08-21 19:11:08,265 - discord_bot - INFO - ------
+2024-08-21 19:11:08,266 - discord_bot - INFO - Help Loaded
+2024-08-21 19:11:08,266 - discord_bot - INFO - Misc Loaded
+2024-08-21 19:11:08,266 - discord_bot - INFO - Admin Loaded
+2024-08-21 19:11:08,266 - discord_bot - INFO - Bbb Loaded
+2024-08-21 19:11:26,779 - discord_bot - ERROR - Error playing sound: 'NoneType' object has no attribute 'play'
+2024-08-21 19:11:28,564 - discord_bot - ERROR - Error playing sound: 'NoneType' object has no attribute 'play'
+2024-08-21 19:11:29,575 - discord_bot - ERROR - Error playing sound: 'NoneType' object has no attribute 'play'
+2024-08-21 19:11:30,595 - discord_bot - ERROR - Error playing sound: 'NoneType' object has no attribute 'play'
+2024-08-21 19:13:40,277 - discord_bot - INFO - Bot is starting...
+2024-08-21 19:13:42,888 - discord_bot - INFO - Bot logged in as : E-Bot#8752
+2024-08-21 19:13:42,888 - discord_bot - INFO - ------
+2024-08-21 19:13:42,889 - discord_bot - INFO - Help Loaded
+2024-08-21 19:13:42,889 - discord_bot - INFO - Misc Loaded
+2024-08-21 19:13:42,889 - discord_bot - INFO - Admin Loaded
+2024-08-21 19:13:42,889 - discord_bot - INFO - Bbb Loaded
+2024-08-21 19:16:23,603 - discord_bot - INFO - Bot is starting...
+2024-08-21 19:16:26,225 - discord_bot - INFO - Bot logged in as : E-Bot#8752
+2024-08-21 19:16:26,225 - discord_bot - INFO - ------
+2024-08-21 19:16:26,226 - discord_bot - INFO - Help Loaded
+2024-08-21 19:16:26,226 - discord_bot - INFO - Misc Loaded
+2024-08-21 19:16:26,226 - discord_bot - INFO - Admin Loaded
+2024-08-21 19:16:26,226 - discord_bot - INFO - Bbb Loaded
+2024-08-21 19:16:30,457 - discord_bot - INFO - adeadzeplin played sound file halobethebullet in adeadz discord bot testing site
+2024-08-21 19:16:36,159 - discord_bot - INFO - adeadzeplin played sound file eminem3 in adeadz discord bot testing site
+2024-08-21 19:16:37,167 - discord_bot - ERROR - Error playing sound: Already playing audio.
+2024-08-21 19:16:38,186 - discord_bot - ERROR - Error playing sound: Already playing audio.
+2024-08-21 19:16:39,210 - discord_bot - ERROR - Error playing sound: Already playing audio.
+2024-08-21 19:16:40,219 - discord_bot - ERROR - Error playing sound: Already playing audio.
+2024-08-21 19:16:41,238 - discord_bot - ERROR - Error playing sound: Already playing audio.
+2024-08-21 19:16:42,245 - discord_bot - ERROR - Error playing sound: Already playing audio.
+2024-08-21 19:16:43,270 - discord_bot - INFO - adeadzeplin played sound file sm64drowing in adeadz discord bot testing site
+2024-08-21 19:16:44,289 - discord_bot - ERROR - Error playing sound: Already playing audio.
+2024-08-21 19:16:45,314 - discord_bot - INFO - adeadzeplin played sound file spongebobpoobaa in adeadz discord bot testing site
+2024-08-21 19:16:46,337 - discord_bot - ERROR - Error playing sound: Already playing audio.
+2024-08-21 19:16:47,359 - discord_bot - ERROR - Error playing sound: Already playing audio.
+2024-08-21 19:16:48,377 - discord_bot - ERROR - Error playing sound: Already playing audio.
+2024-08-21 19:17:11,744 - discord_bot - INFO - adeadzeplin played sound file disaster in Homies 2
+2024-08-21 19:17:15,695 - discord_bot - INFO - adeadzeplin played sound file ssbm3 in Homies 2
+2024-08-21 19:17:18,431 - discord_bot - INFO - adeadzeplin played sound file google_balls in Homies 2
+2024-08-21 19:17:27,714 - discord_bot - ERROR - Error playing sound: 'NoneType' object has no attribute 'play'
+2024-08-21 19:17:28,724 - discord_bot - ERROR - Error playing sound: 'NoneType' object has no attribute 'play'
+2024-08-21 19:17:29,733 - discord_bot - ERROR - Error playing sound: 'NoneType' object has no attribute 'play'
+2024-08-21 19:17:30,737 - discord_bot - ERROR - Error playing sound: 'NoneType' object has no attribute 'play'
+2024-08-21 19:17:31,744 - discord_bot - ERROR - Error playing sound: 'NoneType' object has no attribute 'play'
+2024-08-21 19:17:32,755 - discord_bot - ERROR - Error playing sound: 'NoneType' object has no attribute 'play'
+2024-08-21 19:17:33,766 - discord_bot - ERROR - Error playing sound: 'NoneType' object has no attribute 'play'
+2024-08-21 19:17:34,781 - discord_bot - ERROR - Error playing sound: 'NoneType' object has no attribute 'play'
+2024-08-21 19:17:35,792 - discord_bot - ERROR - Error playing sound: 'NoneType' object has no attribute 'play'
+2024-08-21 19:17:36,801 - discord_bot - ERROR - Error playing sound: 'NoneType' object has no attribute 'play'
+2024-08-21 19:17:38,045 - discord_bot - INFO - adeadzeplin played sound file halokillionair in adeadz discord bot testing site
+2024-08-21 19:17:39,065 - discord_bot - ERROR - Error playing sound: Already playing audio.
+2024-08-21 19:17:40,085 - discord_bot - INFO - adeadzeplin played sound file butmostlypee in adeadz discord bot testing site
+2024-08-21 19:17:41,097 - discord_bot - ERROR - Error playing sound: Already playing audio.
+2024-08-21 19:17:42,101 - discord_bot - ERROR - Error playing sound: Already playing audio.
+2024-08-21 19:17:43,138 - discord_bot - INFO - adeadzeplin played sound file atupid in adeadz discord bot testing site
+2024-08-21 19:17:44,157 - discord_bot - ERROR - Error playing sound: Already playing audio.
+2024-08-21 19:17:45,176 - discord_bot - ERROR - Error playing sound: Already playing audio.
+2024-08-21 19:17:46,199 - discord_bot - ERROR - Error playing sound: Already playing audio.
+2024-08-21 19:17:47,222 - discord_bot - INFO - adeadzeplin played sound file ssbm39 in adeadz discord bot testing site
+2024-08-21 19:17:48,229 - discord_bot - ERROR - Error playing sound: Already playing audio.
+2024-08-21 19:17:49,250 - discord_bot - INFO - adeadzeplin played sound file punktactics in adeadz discord bot testing site
+2024-08-21 19:17:50,260 - discord_bot - ERROR - Error playing sound: Already playing audio.
+2024-08-21 19:17:51,269 - discord_bot - ERROR - Error playing sound: Already playing audio.
+2024-08-21 19:17:52,280 - discord_bot - INFO - adeadzeplin played sound file charlesentertainmentcheese in adeadz discord bot testing site
+2024-08-21 19:17:53,307 - discord_bot - ERROR - Error playing sound: Already playing audio.
+2024-08-21 19:17:54,317 - discord_bot - ERROR - Error playing sound: Already playing audio.
+2024-08-21 19:17:55,327 - discord_bot - ERROR - Error playing sound: Already playing audio.
+2024-08-21 19:17:56,350 - discord_bot - ERROR - Error playing sound: Already playing audio.
+2024-08-21 19:17:57,356 - discord_bot - INFO - adeadzeplin played sound file mcdonaldsbeep in adeadz discord bot testing site
+2024-08-21 19:17:58,366 - discord_bot - ERROR - Error playing sound: Already playing audio.
+2024-08-21 19:17:59,369 - discord_bot - ERROR - Error playing sound: Already playing audio.
+2024-08-21 19:18:00,390 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:18:01,412 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:18:02,425 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:18:03,446 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:18:04,455 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:18:05,465 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:18:06,476 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:18:07,483 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:18:08,507 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:18:09,524 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:18:10,539 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:18:11,533 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:18:12,542 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:18:13,565 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:18:14,577 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:18:15,587 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:18:16,597 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:18:17,611 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:18:18,623 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:18:19,630 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:18:20,643 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:18:21,654 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:18:22,663 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:18:23,663 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:18:24,676 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:18:25,689 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:18:26,710 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:18:27,723 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:18:28,734 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:18:29,742 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:18:30,751 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:18:31,762 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:18:32,773 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:18:33,804 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:18:34,818 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:18:35,826 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:18:36,836 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:18:37,842 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:18:38,870 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:18:39,879 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:18:40,889 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:18:41,898 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:18:42,908 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:18:43,915 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:18:44,937 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:18:45,945 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:18:46,954 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:18:47,965 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:18:48,992 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:18:50,007 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:18:51,018 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:18:52,030 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:18:53,036 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:18:54,050 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:18:55,057 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:18:56,065 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:18:57,075 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:18:58,089 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:18:59,117 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:19:01,503 - discord_bot - INFO - Bot is starting...
+2024-08-21 19:19:04,064 - discord_bot - INFO - Bot logged in as : E-Bot#8752
+2024-08-21 19:19:04,064 - discord_bot - INFO - ------
+2024-08-21 19:19:04,065 - discord_bot - INFO - Help Loaded
+2024-08-21 19:19:04,065 - discord_bot - INFO - Misc Loaded
+2024-08-21 19:19:04,065 - discord_bot - INFO - Admin Loaded
+2024-08-21 19:19:04,065 - discord_bot - INFO - Bbb Loaded
+2024-08-21 19:19:07,643 - discord_bot - ERROR - Error playing sound: 'NoneType' object has no attribute 'play'
+2024-08-21 19:19:14,072 - discord_bot - ERROR - Error playing sound: 'NoneType' object has no attribute 'play'
+2024-08-21 19:19:42,497 - discord_bot - INFO - adeadzeplin played sound file unbeleivablecringe in adeadz discord bot testing site
+2024-08-21 19:19:46,988 - discord_bot - INFO - adeadzeplin played sound file kirbysdreamland5 in adeadz discord bot testing site
+2024-08-21 19:19:47,996 - discord_bot - ERROR - Error playing sound: Already playing audio.
+2024-08-21 19:19:49,027 - discord_bot - ERROR - Error playing sound: Already playing audio.
+2024-08-21 19:19:50,044 - discord_bot - INFO - adeadzeplin played sound file ssbm48 in adeadz discord bot testing site
+2024-08-21 19:19:51,060 - discord_bot - ERROR - Error playing sound: Already playing audio.
+2024-08-21 19:19:52,076 - discord_bot - ERROR - Error playing sound: Already playing audio.
+2024-08-21 19:19:53,092 - discord_bot - INFO - adeadzeplin played sound file halorockets in adeadz discord bot testing site
+2024-08-21 19:19:54,099 - discord_bot - ERROR - Error playing sound: Already playing audio.
+2024-08-21 19:19:55,104 - discord_bot - ERROR - Error playing sound: Already playing audio.
+2024-08-21 19:19:56,131 - discord_bot - ERROR - Error playing sound: Already playing audio.
+2024-08-21 19:19:57,151 - discord_bot - INFO - adeadzeplin played sound file fanta2 in adeadz discord bot testing site
+2024-08-21 19:19:58,174 - discord_bot - ERROR - Error playing sound: Already playing audio.
+2024-08-21 19:19:59,186 - discord_bot - ERROR - Error playing sound: Already playing audio.
+2024-08-21 19:20:00,194 - discord_bot - ERROR - Error playing sound: Already playing audio.
+2024-08-21 19:20:01,206 - discord_bot - ERROR - Error playing sound: Already playing audio.
+2024-08-21 19:20:02,221 - discord_bot - INFO - adeadzeplin played sound file halodreamcrusher in adeadz discord bot testing site
+2024-08-21 19:20:03,229 - discord_bot - ERROR - Error playing sound: Already playing audio.
+2024-08-21 19:20:04,241 - discord_bot - INFO - adeadzeplin played sound file talktomebro in adeadz discord bot testing site
+2024-08-21 19:20:05,249 - discord_bot - ERROR - Error playing sound: Already playing audio.
+2024-08-21 19:20:06,265 - discord_bot - ERROR - Error playing sound: Already playing audio.
+2024-08-21 19:20:07,287 - discord_bot - ERROR - Error playing sound: Already playing audio.
+2024-08-21 19:20:08,292 - discord_bot - ERROR - Error playing sound: Already playing audio.
+2024-08-21 19:20:09,310 - discord_bot - ERROR - Error playing sound: Already playing audio.
+2024-08-21 19:20:10,329 - discord_bot - ERROR - Error playing sound: Already playing audio.
+2024-08-21 19:20:11,344 - discord_bot - ERROR - Error playing sound: Already playing audio.
+2024-08-21 19:20:12,368 - discord_bot - INFO - adeadzeplin played sound file empathy in adeadz discord bot testing site
+2024-08-21 19:20:13,390 - discord_bot - ERROR - Error playing sound: Already playing audio.
+2024-08-21 19:20:14,398 - discord_bot - ERROR - Error playing sound: Already playing audio.
+2024-08-21 19:20:15,428 - discord_bot - ERROR - Error playing sound: Already playing audio.
+2024-08-21 19:20:16,450 - discord_bot - ERROR - Error playing sound: Already playing audio.
+2024-08-21 19:20:17,472 - discord_bot - INFO - adeadzeplin played sound file bingbong in adeadz discord bot testing site
+2024-08-21 19:20:18,481 - discord_bot - ERROR - Error playing sound: Already playing audio.
+2024-08-21 19:20:19,495 - discord_bot - ERROR - Error playing sound: Already playing audio.
+2024-08-21 19:20:20,519 - discord_bot - INFO - adeadzeplin played sound file stayinalive in adeadz discord bot testing site
+2024-08-21 19:20:21,530 - discord_bot - ERROR - Error playing sound: Already playing audio.
+2024-08-21 19:20:22,539 - discord_bot - INFO - adeadzeplin played sound file catonahoverboard in adeadz discord bot testing site
+2024-08-21 19:28:10,754 - discord_bot - INFO - Bot is starting...
+2024-08-21 19:28:13,307 - discord_bot - INFO - Bot logged in as : E-Bot#8752
+2024-08-21 19:28:13,308 - discord_bot - INFO - ------
+2024-08-21 19:28:13,308 - discord_bot - INFO - Help Loaded
+2024-08-21 19:28:13,308 - discord_bot - INFO - Misc Loaded
+2024-08-21 19:28:13,308 - discord_bot - INFO - Admin Loaded
+2024-08-21 19:28:13,308 - discord_bot - INFO - Bbb Loaded
+2024-08-21 19:28:18,211 - discord_bot - INFO - Bot is starting...
+2024-08-21 19:28:53,423 - discord_bot - INFO - Bot is starting...
+2024-08-21 19:29:43,297 - discord_bot - INFO - Bot logged in as : E-Bot#8752
+2024-08-21 19:29:43,297 - discord_bot - INFO - ------
+2024-08-21 19:29:43,297 - discord_bot - INFO - Help Loaded
+2024-08-21 19:29:43,298 - discord_bot - INFO - Misc Loaded
+2024-08-21 19:29:43,298 - discord_bot - INFO - Admin Loaded
+2024-08-21 19:29:43,298 - discord_bot - INFO - Bbb Loaded
+2024-08-21 19:35:07,966 - discord_bot - INFO - Bot is starting...
+2024-08-21 19:35:10,681 - discord_bot - INFO - Bot logged in as : E-Bot#8752
+2024-08-21 19:35:10,682 - discord_bot - INFO - ------
+2024-08-21 19:35:10,682 - discord_bot - INFO - Help Loaded
+2024-08-21 19:35:10,682 - discord_bot - INFO - Misc Loaded
+2024-08-21 19:35:10,682 - discord_bot - INFO - Admin Loaded
+2024-08-21 19:35:10,683 - discord_bot - INFO - Bbb Loaded
+2024-08-21 19:35:16,037 - discord_bot - INFO - adeadzeplin played sound file eee in adeadz discord bot testing site
+2024-08-21 19:35:31,897 - discord_bot - INFO - adeadzeplin played sound file halokillamanjaro in adeadz discord bot testing site
+2024-08-21 19:35:35,077 - discord_bot - INFO - adeadzeplin played sound file ssbm57 in adeadz discord bot testing site
+2024-08-21 19:35:39,345 - discord_bot - INFO - adeadzeplin played sound file ssbm72 in adeadz discord bot testing site
+2024-08-21 19:35:41,975 - discord_bot - INFO - adeadzeplin played sound file ssbm16 in adeadz discord bot testing site
+2024-08-21 19:35:45,462 - discord_bot - INFO - adeadzeplin played sound file ssbm70 in adeadz discord bot testing site
+2024-08-21 19:35:47,768 - discord_bot - INFO - adeadzeplin played sound file pizza in adeadz discord bot testing site
+2024-08-21 19:35:54,595 - discord_bot - INFO - adeadzeplin played sound file halo2 in adeadz discord bot testing site
+2024-08-21 19:36:01,588 - discord_bot - INFO - adeadzeplin played sound file fin in adeadz discord bot testing site
+2024-08-21 19:36:07,375 - discord_bot - INFO - adeadzeplin played sound file talktomebro in adeadz discord bot testing site
+2024-08-21 19:36:16,314 - discord_bot - INFO - adeadzeplin played sound file halo3baby in adeadz discord bot testing site
+2024-08-21 19:36:19,161 - discord_bot - INFO - adeadzeplin played sound file ssbm55 in adeadz discord bot testing site
+2024-08-21 19:36:24,174 - discord_bot - INFO - adeadzeplin played sound file ijustflippedaswitch in adeadz discord bot testing site
+2024-08-21 19:36:28,538 - discord_bot - INFO - adeadzeplin played sound file ssbm39 in adeadz discord bot testing site
+2024-08-21 19:36:31,479 - discord_bot - INFO - adeadzeplin played sound file halokillingspree in adeadz discord bot testing site
+2024-08-21 19:36:34,213 - discord_bot - INFO - adeadzeplin played sound file halokilltac in adeadz discord bot testing site
+2024-08-21 19:36:37,393 - discord_bot - INFO - adeadzeplin played sound file OnepieceCock2 in adeadz discord bot testing site
+2024-08-21 19:36:42,845 - discord_bot - INFO - adeadzeplin played sound file whyyopantiesdown in adeadz discord bot testing site
+2024-08-21 19:36:45,279 - discord_bot - INFO - adeadzeplin played sound file halomisc4 in adeadz discord bot testing site
+2024-08-21 19:36:48,353 - discord_bot - INFO - adeadzeplin played sound file ssbm51 in adeadz discord bot testing site
+2024-08-21 19:36:52,400 - discord_bot - INFO - adeadzeplin played sound file whereischapstick in adeadz discord bot testing site
+2024-08-21 19:36:56,367 - discord_bot - INFO - adeadzeplin played sound file athiestbelike in adeadz discord bot testing site
+2024-08-21 19:37:01,719 - discord_bot - INFO - adeadzeplin played sound file kirbysdreamland8 in adeadz discord bot testing site
+2024-08-21 19:37:05,414 - discord_bot - INFO - adeadzeplin played sound file keyboardcat2 in adeadz discord bot testing site
+2024-08-21 19:37:08,913 - discord_bot - INFO - adeadzeplin played sound file runninginthe90s3 in adeadz discord bot testing site
+2024-08-21 19:37:12,945 - discord_bot - INFO - adeadzeplin played sound file getdatpepaoff in adeadz discord bot testing site
+2024-08-21 19:37:17,077 - discord_bot - INFO - adeadzeplin played sound file spongebob2 in adeadz discord bot testing site
+2024-08-21 19:37:19,817 - discord_bot - INFO - adeadzeplin played sound file wakkawakka in adeadz discord bot testing site
+2024-08-21 19:37:22,560 - discord_bot - INFO - adeadzeplin played sound file powerstance in adeadz discord bot testing site
+2024-08-21 19:37:26,385 - discord_bot - INFO - adeadzeplin played sound file anenomyspotted in adeadz discord bot testing site
+2024-08-21 19:37:31,920 - discord_bot - INFO - adeadzeplin played sound file ssbm50 in adeadz discord bot testing site
+2024-08-21 19:37:35,313 - discord_bot - INFO - adeadzeplin played sound file ducksong3 in adeadz discord bot testing site
+2024-08-21 19:37:39,249 - discord_bot - INFO - adeadzeplin played sound file halohailtotheking in adeadz discord bot testing site
+2024-08-21 19:37:42,759 - discord_bot - INFO - adeadzeplin played sound file blue in adeadz discord bot testing site
+2024-08-21 19:37:46,783 - discord_bot - INFO - adeadzeplin played sound file fortniteshanty2 in adeadz discord bot testing site
+2024-08-21 19:37:50,384 - discord_bot - INFO - adeadzeplin played sound file blingblok in adeadz discord bot testing site
+2024-08-21 19:37:53,428 - discord_bot - INFO - adeadzeplin played sound file mamajuevo in adeadz discord bot testing site
+2024-08-21 19:37:58,875 - discord_bot - INFO - adeadzeplin played sound file immovableobject in adeadz discord bot testing site
+2024-08-21 19:38:02,152 - discord_bot - INFO - adeadzeplin played sound file onlyaspoonfull in adeadz discord bot testing site
+2024-08-21 19:38:08,375 - discord_bot - INFO - adeadzeplin played sound file wiihell1 in adeadz discord bot testing site
+2024-08-21 19:38:14,673 - discord_bot - INFO - adeadzeplin played sound file plinplinplon in adeadz discord bot testing site
+2024-08-21 19:38:18,052 - discord_bot - INFO - adeadzeplin played sound file cumzone8 in adeadz discord bot testing site
+2024-08-21 19:38:21,773 - discord_bot - INFO - adeadzeplin played sound file smithing in adeadz discord bot testing site
+2024-08-21 19:38:27,772 - discord_bot - INFO - adeadzeplin played sound file urabot in adeadz discord bot testing site
+2024-08-21 19:38:29,869 - discord_bot - INFO - adeadzeplin played sound file immegaman1 in adeadz discord bot testing site
+2024-08-21 19:38:32,610 - discord_bot - INFO - adeadzeplin played sound file babyimyours2 in adeadz discord bot testing site
+2024-08-21 19:38:35,782 - discord_bot - INFO - adeadzeplin played sound file epiphanypimp in adeadz discord bot testing site
+2024-08-21 19:38:39,723 - discord_bot - INFO - adeadzeplin played sound file sensual2 in adeadz discord bot testing site
+2024-08-21 19:38:42,460 - discord_bot - INFO - adeadzeplin played sound file miscmemesong19d in adeadz discord bot testing site
+2024-08-21 19:38:46,617 - discord_bot - INFO - adeadzeplin played sound file youcouldstopat5or6stores3 in adeadz discord bot testing site
+2024-08-21 19:38:50,950 - discord_bot - INFO - adeadzeplin played sound file harlemshake2 in adeadz discord bot testing site
+2024-08-21 19:38:55,753 - discord_bot - INFO - adeadzeplin played sound file spongebob1 in adeadz discord bot testing site
+2024-08-21 19:38:59,365 - discord_bot - INFO - adeadzeplin played sound file ahhhhh in adeadz discord bot testing site
+2024-08-21 19:39:02,000 - discord_bot - INFO - adeadzeplin played sound file fuckyou in adeadz discord bot testing site
+2024-08-21 19:39:05,404 - discord_bot - INFO - adeadzeplin played sound file windwaker2 in adeadz discord bot testing site
+2024-08-21 19:39:09,563 - discord_bot - INFO - adeadzeplin played sound file beats in adeadz discord bot testing site
+2024-08-21 19:39:12,956 - discord_bot - INFO - adeadzeplin played sound file halountouchable in adeadz discord bot testing site
+2024-08-21 19:39:15,809 - discord_bot - INFO - adeadzeplin played sound file miscmemesong4a in adeadz discord bot testing site
+2024-08-21 19:39:20,399 - discord_bot - INFO - adeadzeplin played sound file mfdoob in adeadz discord bot testing site
+2024-08-21 19:39:23,245 - discord_bot - INFO - adeadzeplin played sound file canalowcomeupyoucrib in adeadz discord bot testing site
+2024-08-21 19:39:26,538 - discord_bot - INFO - adeadzeplin played sound file ssbm19 in adeadz discord bot testing site
+2024-08-21 19:39:29,599 - discord_bot - INFO - adeadzeplin played sound file spacejam2 in adeadz discord bot testing site
+2024-08-21 19:39:32,562 - discord_bot - INFO - adeadzeplin played sound file keyboardcat1 in adeadz discord bot testing site
+2024-08-21 19:39:36,598 - discord_bot - INFO - adeadzeplin played sound file keyboardcat3 in adeadz discord bot testing site
+2024-08-21 19:39:39,983 - discord_bot - INFO - adeadzeplin played sound file kingkoopa in adeadz discord bot testing site
+2024-08-21 19:39:45,093 - discord_bot - INFO - adeadzeplin played sound file wiihell2 in adeadz discord bot testing site
+2024-08-21 19:39:49,447 - discord_bot - INFO - adeadzeplin played sound file rappinforjesus1 in adeadz discord bot testing site
+2024-08-21 19:39:53,481 - discord_bot - INFO - adeadzeplin played sound file applebottomjeans in adeadz discord bot testing site
+2024-08-21 19:39:57,078 - discord_bot - INFO - adeadzeplin played sound file friday1 in adeadz discord bot testing site
+2024-08-21 19:40:00,375 - discord_bot - INFO - adeadzeplin played sound file turnsoutunotgay in adeadz discord bot testing site
+2024-08-21 19:40:02,975 - discord_bot - INFO - adeadzeplin played sound file immovableobject in adeadz discord bot testing site
+2024-08-21 19:40:06,265 - discord_bot - INFO - adeadzeplin played sound file wiihell2 in adeadz discord bot testing site
+2024-08-21 19:40:10,534 - discord_bot - INFO - adeadzeplin played sound file bababoullie in adeadz discord bot testing site
+2024-08-21 19:40:12,964 - discord_bot - INFO - adeadzeplin played sound file idk2 in adeadz discord bot testing site
+2024-08-21 19:40:16,998 - discord_bot - INFO - adeadzeplin played sound file souljaboytelem in adeadz discord bot testing site
+2024-08-21 19:40:19,293 - discord_bot - INFO - adeadzeplin played sound file audacity in adeadz discord bot testing site
+2024-08-21 19:40:21,495 - discord_bot - INFO - adeadzeplin played sound file ssbm30 in adeadz discord bot testing site
+2024-08-21 19:40:24,243 - discord_bot - INFO - adeadzeplin played sound file shialebouf in adeadz discord bot testing site
+2024-08-21 19:40:27,848 - discord_bot - INFO - adeadzeplin played sound file sm64solonggaybowser in adeadz discord bot testing site
+2024-08-21 19:40:31,011 - discord_bot - INFO - adeadzeplin played sound file dead3 in adeadz discord bot testing site
+2024-08-21 19:40:35,819 - discord_bot - INFO - adeadzeplin played sound file kirbysdreamland15 in adeadz discord bot testing site
+2024-08-21 19:40:39,751 - discord_bot - INFO - adeadzeplin played sound file awwwe in adeadz discord bot testing site
+2024-08-21 19:40:44,183 - discord_bot - INFO - adeadzeplin played sound file epiphanypimp in adeadz discord bot testing site
+2024-08-21 19:40:48,133 - discord_bot - INFO - adeadzeplin played sound file 21ofseptember4 in adeadz discord bot testing site
+2024-08-21 19:40:51,855 - discord_bot - INFO - adeadzeplin played sound file swayissmart in adeadz discord bot testing site
+2024-08-21 19:40:59,154 - discord_bot - INFO - adeadzeplin played sound file quarterbit in adeadz discord bot testing site
+2024-08-21 19:41:01,243 - discord_bot - INFO - adeadzeplin played sound file chocrain11 in adeadz discord bot testing site
+2024-08-21 19:41:05,052 - discord_bot - INFO - adeadzeplin played sound file gigachad1bit in adeadz discord bot testing site
+2024-08-21 19:41:11,693 - discord_bot - INFO - adeadzeplin played sound file halomisc3 in adeadz discord bot testing site
+2024-08-21 19:41:14,321 - discord_bot - INFO - adeadzeplin played sound file chocrain11 in adeadz discord bot testing site
+2024-08-21 19:41:18,115 - discord_bot - INFO - adeadzeplin played sound file ssbm66 in adeadz discord bot testing site
+2024-08-21 19:41:20,083 - discord_bot - INFO - adeadzeplin played sound file ssbm83 in adeadz discord bot testing site
+2024-08-21 19:41:22,368 - discord_bot - INFO - adeadzeplin played sound file haloroadhog in adeadz discord bot testing site
+2024-08-21 19:41:25,439 - discord_bot - INFO - adeadzeplin played sound file sm64yahoo in adeadz discord bot testing site
+2024-08-21 19:41:28,509 - discord_bot - INFO - adeadzeplin played sound file takeonme in adeadz discord bot testing site
+2024-08-21 19:41:32,753 - discord_bot - INFO - adeadzeplin played sound file miscmemesong4a in adeadz discord bot testing site
+2024-08-21 19:41:37,347 - discord_bot - INFO - adeadzeplin played sound file useless in adeadz discord bot testing site
+2024-08-21 19:41:41,931 - discord_bot - INFO - adeadzeplin played sound file awwwe in adeadz discord bot testing site
+2024-08-21 19:41:46,374 - discord_bot - INFO - adeadzeplin played sound file roger-roger in adeadz discord bot testing site
+2024-08-21 19:41:48,566 - discord_bot - INFO - adeadzeplin played sound file 8bit in adeadz discord bot testing site
+2024-08-21 19:41:50,665 - discord_bot - INFO - adeadzeplin played sound file hellnah in adeadz discord bot testing site
+2024-08-21 19:41:57,260 - discord_bot - INFO - adeadzeplin played sound file culicitaca1 in adeadz discord bot testing site
+2024-08-21 19:42:01,300 - discord_bot - INFO - adeadzeplin played sound file beats in adeadz discord bot testing site
+2024-08-21 19:42:04,696 - discord_bot - INFO - adeadzeplin played sound file immovableobject in adeadz discord bot testing site
+2024-08-21 19:42:07,985 - discord_bot - INFO - adeadzeplin played sound file pornhubmeme in adeadz discord bot testing site
+2024-08-21 19:42:12,248 - discord_bot - INFO - adeadzeplin played sound file sm64star in adeadz discord bot testing site
+2024-08-21 19:42:18,236 - discord_bot - INFO - adeadzeplin played sound file awserfghsefg in adeadz discord bot testing site
+2024-08-21 19:42:20,962 - discord_bot - INFO - adeadzeplin played sound file sasdoifgnapodfg in adeadz discord bot testing site
+2024-08-21 19:42:24,243 - discord_bot - INFO - adeadzeplin played sound file cumzone7 in adeadz discord bot testing site
+2024-08-21 19:42:27,749 - discord_bot - INFO - adeadzeplin played sound file ssbm59 in adeadz discord bot testing site
+2024-08-21 19:42:30,168 - discord_bot - INFO - adeadzeplin played sound file chocrain3 in adeadz discord bot testing site
+2024-08-21 19:42:34,339 - discord_bot - INFO - adeadzeplin played sound file whatdoesthisuttondo in adeadz discord bot testing site
+2024-08-21 19:42:37,724 - discord_bot - INFO - adeadzeplin played sound file bababooey1 in adeadz discord bot testing site
+2024-08-21 19:42:41,546 - discord_bot - INFO - adeadzeplin played sound file alreadyknowyouabitchmy in adeadz discord bot testing site
+2024-08-21 19:42:45,347 - discord_bot - INFO - adeadzeplin played sound file hakari in adeadz discord bot testing site
+2024-08-21 19:42:49,302 - discord_bot - INFO - adeadzeplin played sound file pbjt1 in adeadz discord bot testing site
+2024-08-21 19:42:52,365 - discord_bot - INFO - adeadzeplin played sound file ssstik in adeadz discord bot testing site
+2024-08-21 19:42:58,146 - discord_bot - INFO - adeadzeplin played sound file ssbm83 in adeadz discord bot testing site
+2024-08-21 19:43:00,437 - discord_bot - INFO - adeadzeplin played sound file ssbm58 in adeadz discord bot testing site
+2024-08-21 19:43:02,744 - discord_bot - INFO - adeadzeplin played sound file ssbm69 in adeadz discord bot testing site
+2024-08-21 19:43:04,733 - discord_bot - INFO - adeadzeplin played sound file chocrain1 in adeadz discord bot testing site
+2024-08-21 19:43:08,353 - discord_bot - INFO - adeadzeplin played sound file wearenumb2 in adeadz discord bot testing site
+2024-08-21 19:43:13,380 - discord_bot - INFO - adeadzeplin played sound file sm64star in adeadz discord bot testing site
+2024-08-21 19:43:24,957 - discord_bot - INFO - Bot is starting...
+2024-08-21 19:43:27,492 - discord_bot - INFO - Bot logged in as : E-Bot#8752
+2024-08-21 19:43:27,492 - discord_bot - INFO - ------
+2024-08-21 19:43:27,492 - discord_bot - INFO - Help Loaded
+2024-08-21 19:43:27,492 - discord_bot - INFO - Misc Loaded
+2024-08-21 19:43:27,492 - discord_bot - INFO - Admin Loaded
+2024-08-21 19:43:27,493 - discord_bot - INFO - Bbb Loaded
+2024-08-21 19:43:35,514 - discord_bot - INFO - adeadzeplin played sound file giantenemyspider in adeadz discord bot testing site
+2024-08-21 19:43:52,118 - discord_bot - INFO - adeadzeplin played sound file poopwater in adeadz discord bot testing site
+2024-08-21 19:43:54,733 - discord_bot - INFO - adeadzeplin played sound file ssbm50 in adeadz discord bot testing site
+2024-08-21 19:43:58,134 - discord_bot - INFO - adeadzeplin played sound file wombocomboa in adeadz discord bot testing site
+2024-08-21 19:44:01,972 - discord_bot - INFO - adeadzeplin played sound file eggegg in adeadz discord bot testing site
+2024-08-21 19:44:09,058 - discord_bot - INFO - adeadzeplin played sound file halokilltac in adeadz discord bot testing site
+2024-08-21 19:44:12,239 - discord_bot - INFO - adeadzeplin played sound file runniingupthehill3 in adeadz discord bot testing site
+2024-08-21 19:44:18,022 - discord_bot - INFO - adeadzeplin played sound file chocrain1 in adeadz discord bot testing site
+2024-08-21 19:44:21,639 - discord_bot - INFO - adeadzeplin played sound file catonahoverboard in adeadz discord bot testing site
+2024-08-21 19:44:28,406 - discord_bot - INFO - adeadzeplin played sound file brainsuicide in adeadz discord bot testing site
+2024-08-21 19:44:32,457 - discord_bot - INFO - adeadzeplin played sound file sensual2 in adeadz discord bot testing site
+2024-08-21 19:44:35,198 - discord_bot - INFO - adeadzeplin played sound file chillinontheweekend in adeadz discord bot testing site
+2024-08-21 19:44:38,375 - discord_bot - INFO - adeadzeplin played sound file bababooey2 in adeadz discord bot testing site
+2024-08-21 19:44:42,195 - discord_bot - INFO - adeadzeplin played sound file wii5 in adeadz discord bot testing site
+2024-08-21 19:44:44,397 - discord_bot - INFO - adeadzeplin played sound file fanta2 in adeadz discord bot testing site
+2024-08-21 19:44:49,530 - discord_bot - INFO - adeadzeplin played sound file google_balls in adeadz discord bot testing site
+2024-08-21 19:44:52,813 - discord_bot - INFO - adeadzeplin played sound file wiihell5 in adeadz discord bot testing site
+2024-08-21 19:44:58,268 - discord_bot - INFO - adeadzeplin played sound file ssbm10 in adeadz discord bot testing site
+2024-08-21 19:45:02,626 - discord_bot - INFO - adeadzeplin played sound file whiniethepooh in adeadz discord bot testing site
+2024-08-21 19:45:06,902 - discord_bot - INFO - adeadzeplin played sound file eggegg in adeadz discord bot testing site
+2024-08-21 19:45:14,061 - discord_bot - INFO - adeadzeplin played sound file manfuckthemkidsbro in adeadz discord bot testing site
+2024-08-21 19:45:18,308 - discord_bot - INFO - adeadzeplin played sound file harlemshake3 in adeadz discord bot testing site
+2024-08-21 19:45:22,652 - discord_bot - INFO - adeadzeplin played sound file ssbm30 in adeadz discord bot testing site
+2024-08-21 19:45:25,390 - discord_bot - INFO - adeadzeplin played sound file wiihell5 in adeadz discord bot testing site
+2024-08-21 19:45:30,849 - discord_bot - INFO - adeadzeplin played sound file jellyrave in adeadz discord bot testing site
+2024-08-21 19:45:49,187 - discord_bot - INFO - adeadzeplin played sound file shialebouf8 in adeadz discord bot testing site
+2024-08-21 19:45:53,004 - discord_bot - INFO - adeadzeplin played sound file kanyerunaway1 in adeadz discord bot testing site
+2024-08-21 19:45:58,792 - discord_bot - INFO - adeadzeplin played sound file shialebouf7 in adeadz discord bot testing site
+2024-08-21 19:46:01,429 - discord_bot - INFO - adeadzeplin played sound file miscmemesong4b in adeadz discord bot testing site
+2024-08-21 19:46:05,544 - discord_bot - INFO - adeadzeplin played sound file Chopper in adeadz discord bot testing site
+2024-08-21 19:46:11,405 - discord_bot - INFO - adeadzeplin played sound file chocrain12 in adeadz discord bot testing site
+2024-08-21 19:46:14,034 - discord_bot - INFO - adeadzeplin played sound file halommmmbrains in adeadz discord bot testing site
+2024-08-21 19:46:19,069 - discord_bot - INFO - adeadzeplin played sound file halommmmbrains in adeadz discord bot testing site
+2024-08-21 19:46:24,080 - discord_bot - INFO - adeadzeplin played sound file ssstik in adeadz discord bot testing site
+2024-08-21 19:46:29,873 - discord_bot - INFO - adeadzeplin played sound file halokillionair in adeadz discord bot testing site
+2024-08-21 19:46:32,506 - discord_bot - INFO - adeadzeplin played sound file homedepot in adeadz discord bot testing site
+2024-08-21 19:46:38,176 - discord_bot - INFO - adeadzeplin played sound file chocrain9 in adeadz discord bot testing site
+2024-08-21 19:46:41,992 - discord_bot - INFO - adeadzeplin played sound file halokillingfrenzy in adeadz discord bot testing site
+2024-08-21 19:46:44,626 - discord_bot - INFO - adeadzeplin played sound file miscmemesong10 in adeadz discord bot testing site
+2024-08-21 19:46:48,649 - discord_bot - INFO - adeadzeplin played sound file stayinalive2 in adeadz discord bot testing site
+2024-08-21 19:46:52,349 - discord_bot - INFO - adeadzeplin played sound file golddigger1 in adeadz discord bot testing site
+2024-08-21 19:46:55,517 - discord_bot - INFO - adeadzeplin played sound file ssbm8 in adeadz discord bot testing site
+2024-08-21 19:46:59,226 - discord_bot - INFO - adeadzeplin played sound file wiihell5 in adeadz discord bot testing site
+2024-08-21 19:47:04,664 - discord_bot - INFO - adeadzeplin played sound file shialebouf11 in adeadz discord bot testing site
+2024-08-21 19:47:07,867 - discord_bot - INFO - adeadzeplin played sound file miscmemesong21a in adeadz discord bot testing site
+2024-08-21 19:47:12,888 - discord_bot - INFO - adeadzeplin played sound file gatorade in adeadz discord bot testing site
+2024-08-21 19:47:20,628 - discord_bot - INFO - adeadzeplin played sound file OBJECTION6 in adeadz discord bot testing site
+2024-08-21 19:47:23,692 - discord_bot - INFO - adeadzeplin played sound file roboevangellion in adeadz discord bot testing site
+2024-08-21 19:47:30,883 - discord_bot - INFO - adeadzeplin played sound file music in adeadz discord bot testing site
+2024-08-21 19:47:34,914 - discord_bot - INFO - adeadzeplin played sound file whathappenmario in adeadz discord bot testing site
+2024-08-21 19:47:38,965 - discord_bot - INFO - adeadzeplin played sound file fingers in adeadz discord bot testing site
+2024-08-21 19:47:43,228 - discord_bot - INFO - adeadzeplin played sound file kingkoopa in adeadz discord bot testing site
+2024-08-21 19:47:48,366 - discord_bot - INFO - adeadzeplin played sound file halorunningriot in adeadz discord bot testing site
+2024-08-21 19:47:51,019 - discord_bot - INFO - adeadzeplin played sound file cbat2 in adeadz discord bot testing site
+2024-08-21 19:47:52,573 - discord_bot - INFO - adeadzeplin played sound file uzibeinguzi in adeadz discord bot testing site
+2024-08-21 19:47:56,087 - discord_bot - INFO - adeadzeplin played sound file haloslicendice in adeadz discord bot testing site
+2024-08-21 19:47:58,817 - discord_bot - INFO - adeadzeplin played sound file halo24 in adeadz discord bot testing site
+2024-08-21 19:48:03,081 - discord_bot - INFO - adeadzeplin played sound file turnsoutunotgay in adeadz discord bot testing site
+2024-08-21 19:48:05,736 - discord_bot - INFO - adeadzeplin played sound file bep1 in adeadz discord bot testing site
+2024-08-21 19:48:10,342 - discord_bot - INFO - adeadzeplin played sound file miscmemesong3a in adeadz discord bot testing site
+2024-08-21 19:48:14,280 - discord_bot - INFO - adeadzeplin played sound file ssbm73 in adeadz discord bot testing site
+2024-08-21 19:48:15,612 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:48:16,619 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:48:17,645 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:48:18,648 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:48:19,661 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:48:20,676 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:48:21,690 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:48:22,704 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:48:23,720 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:48:24,734 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:48:25,760 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:48:26,784 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:48:27,801 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:48:28,814 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:48:29,827 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:48:30,841 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:48:31,869 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:48:32,886 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:48:33,897 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:48:34,906 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:48:35,918 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:48:36,933 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:48:37,964 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:48:38,984 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:48:40,006 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:48:41,014 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:48:42,031 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:48:43,055 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:48:44,079 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:48:45,093 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:48:46,105 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:48:47,128 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:48:48,139 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:48:49,152 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:48:50,167 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:48:51,188 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:48:52,193 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:48:53,201 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:48:54,224 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:48:55,232 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 19:52:58,547 - discord_bot - INFO - Bot is starting...
+2024-08-21 19:53:01,252 - discord_bot - INFO - Bot logged in as : E-Bot#8752
+2024-08-21 19:53:01,252 - discord_bot - INFO - ------
+2024-08-21 19:53:01,252 - discord_bot - INFO - Help Loaded
+2024-08-21 19:53:01,252 - discord_bot - INFO - Misc Loaded
+2024-08-21 19:53:01,253 - discord_bot - INFO - Admin Loaded
+2024-08-21 19:53:01,253 - discord_bot - INFO - Bbb Loaded
+2024-08-21 19:53:13,646 - discord_bot - INFO - adeadzeplin played sound file kingkoopa in adeadz discord bot testing site
+2024-08-21 19:53:19,426 - discord_bot - INFO - adeadzeplin played sound file Sussyballs3 in adeadz discord bot testing site
+2024-08-21 19:53:26,517 - discord_bot - INFO - adeadzeplin played sound file scramblepre in adeadz discord bot testing site
+2024-08-21 19:53:30,113 - discord_bot - INFO - adeadzeplin played sound file somethingaboutyagurl in adeadz discord bot testing site
+2024-08-21 19:53:35,091 - discord_bot - INFO - adeadzeplin played sound file ssbm74 in adeadz discord bot testing site
+2024-08-21 19:53:38,424 - discord_bot - INFO - adeadzeplin played sound file uhohsintkyguitar in adeadz discord bot testing site
+2024-08-21 19:53:43,723 - discord_bot - INFO - adeadzeplin played sound file whodatboi in adeadz discord bot testing site
+2024-08-21 19:53:48,241 - discord_bot - INFO - adeadzeplin played sound file ssbm33 in adeadz discord bot testing site
+2024-08-21 19:53:52,325 - discord_bot - INFO - adeadzeplin played sound file whatislove in adeadz discord bot testing site
+2024-08-21 19:53:59,587 - discord_bot - INFO - adeadzeplin played sound file halommmmbrains in adeadz discord bot testing site
+2024-08-21 19:55:10,705 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:55:11,722 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:55:12,733 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:55:13,743 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:55:14,751 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:55:15,759 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:55:16,773 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:55:17,786 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:55:18,794 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:55:19,804 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:55:20,801 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:55:21,807 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:55:22,817 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:55:23,824 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:55:24,824 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:55:25,834 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:55:26,846 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:55:27,848 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:55:28,859 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:55:29,859 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:55:30,862 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:55:31,874 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:55:32,886 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:55:33,909 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:55:34,921 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:55:35,932 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:55:36,942 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:55:37,953 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:55:38,966 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:55:39,974 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:55:40,974 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:55:41,985 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:55:42,992 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:55:44,001 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:55:45,006 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:55:46,017 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:55:47,028 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:55:48,034 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:55:49,042 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:55:50,067 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:55:51,072 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:55:52,086 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:55:53,094 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:55:54,106 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:55:55,114 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:55:56,125 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:55:57,139 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:55:58,149 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:55:59,149 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:56:00,160 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:56:01,169 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:56:02,181 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:56:03,188 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:56:04,188 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:56:05,198 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:56:06,207 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:56:07,215 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:56:08,226 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:56:09,234 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:56:10,244 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:56:11,254 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:56:12,267 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:56:13,279 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:56:14,288 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:56:15,299 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:56:16,312 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:56:17,326 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:56:18,336 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:56:19,347 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:56:20,356 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:56:21,368 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:56:22,381 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:56:23,389 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:56:24,396 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:56:25,404 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:56:26,427 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:56:27,432 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:56:28,445 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:56:29,454 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:56:30,464 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:56:31,467 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:56:32,476 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:56:33,478 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:56:34,489 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:56:35,494 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:56:36,505 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:56:37,519 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:56:38,528 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:56:39,539 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:56:40,541 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:56:41,552 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:56:42,561 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:56:43,572 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:56:44,583 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:56:45,593 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:56:46,600 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:56:47,613 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:56:48,621 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:56:49,627 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:56:50,637 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:56:51,646 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:56:52,659 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:56:53,666 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:56:54,678 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:56:55,685 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:56:56,694 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:56:57,701 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:56:58,713 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:56:59,726 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:57:00,733 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:57:01,747 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:57:02,760 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:57:03,766 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:57:04,780 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:57:05,790 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:57:06,802 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 19:57:07,808 - discord_bot - ERROR - No voice channels with members found.
+2024-08-21 20:00:07,166 - discord_bot - INFO - Bot is starting...
+2024-08-21 20:00:09,916 - discord_bot - INFO - Bot logged in as : E-Bot#8752
+2024-08-21 20:00:09,916 - discord_bot - INFO - ------
+2024-08-21 20:00:09,917 - discord_bot - INFO - Help Loaded
+2024-08-21 20:00:09,917 - discord_bot - INFO - Misc Loaded
+2024-08-21 20:00:09,917 - discord_bot - INFO - Admin Loaded
+2024-08-21 20:00:09,917 - discord_bot - INFO - Bbb Loaded
+2024-08-21 20:02:15,119 - discord_bot - INFO - adeadzeplin played sound file kirbysdreamland14 in adeadz discord bot testing site
+2024-08-21 20:02:21,751 - discord_bot - INFO - adeadzeplin played sound file imstackinupbreadlikechips in adeadz discord bot testing site
+2024-08-21 20:02:28,443 - discord_bot - INFO - adeadzeplin played sound file chocrain1 in adeadz discord bot testing site
+2024-08-21 20:02:35,114 - discord_bot - INFO - adeadzeplin played sound file ssbm43 in adeadz discord bot testing site
+2024-08-21 20:02:41,847 - discord_bot - INFO - adeadzeplin played sound file canalowcomeupyoucrib in adeadz discord bot testing site
+2024-08-21 20:02:48,441 - discord_bot - INFO - adeadzeplin played sound file minecraft1 in adeadz discord bot testing site
+2024-08-21 20:02:55,082 - discord_bot - INFO - adeadzeplin played sound file riff2 in adeadz discord bot testing site
+2024-08-21 20:03:03,685 - discord_bot - INFO - Bot is starting...
+2024-08-21 20:03:06,400 - discord_bot - INFO - Bot logged in as : E-Bot#8752
+2024-08-21 20:03:06,400 - discord_bot - INFO - ------
+2024-08-21 20:03:06,401 - discord_bot - INFO - Help Loaded
+2024-08-21 20:03:06,401 - discord_bot - INFO - Misc Loaded
+2024-08-21 20:03:06,401 - discord_bot - INFO - Admin Loaded
+2024-08-21 20:03:06,401 - discord_bot - INFO - Bbb Loaded
+2024-08-21 20:03:56,319 - discord_bot - INFO - Bot is starting...
+2024-08-21 20:03:59,032 - discord_bot - INFO - Bot logged in as : E-Bot#8752
+2024-08-21 20:03:59,032 - discord_bot - INFO - ------
+2024-08-21 20:03:59,033 - discord_bot - INFO - Help Loaded
+2024-08-21 20:03:59,033 - discord_bot - INFO - Misc Loaded
+2024-08-21 20:03:59,033 - discord_bot - INFO - Admin Loaded
+2024-08-21 20:03:59,033 - discord_bot - INFO - Bbb Loaded
+2024-08-21 20:14:18,597 - discord_bot - INFO - Bot is starting...
+2024-08-21 20:14:21,402 - discord_bot - INFO - Bot logged in as : E-Bot#8752
+2024-08-21 20:14:21,402 - discord_bot - INFO - ------
+2024-08-21 20:14:21,402 - discord_bot - INFO - Help Loaded
+2024-08-21 20:14:21,402 - discord_bot - INFO - Misc Loaded
+2024-08-21 20:14:21,403 - discord_bot - INFO - Admin Loaded
+2024-08-21 20:14:21,403 - discord_bot - INFO - Bbb Loaded
+2024-08-21 20:14:32,059 - discord_bot - INFO - Played sound file turttlechoir
+2024-08-21 20:14:40,771 - discord_bot - INFO - Played sound file miscmemesong10
+2024-08-21 20:14:47,407 - discord_bot - INFO - Played sound file Noballs
+2024-08-21 20:14:54,086 - discord_bot - INFO - Played sound file robzombie
+2024-08-21 20:15:01,119 - discord_bot - INFO - Played sound file kirbysdreamland8
+2024-08-21 20:15:07,761 - discord_bot - INFO - Played sound file whatislove
+2024-08-21 20:15:14,413 - discord_bot - INFO - Played sound file ducksong7
+2024-08-21 20:15:33,124 - discord_bot - INFO - Played sound file bestnightofmylife
+2024-08-21 20:16:17,596 - discord_bot - INFO - Bot is starting...
+2024-08-21 20:16:20,188 - discord_bot - INFO - Bot logged in as : E-Bot#8752
+2024-08-21 20:16:20,189 - discord_bot - INFO - ------
+2024-08-21 20:16:20,189 - discord_bot - INFO - Help Loaded
+2024-08-21 20:16:20,189 - discord_bot - INFO - Misc Loaded
+2024-08-21 20:16:20,189 - discord_bot - INFO - Admin Loaded
+2024-08-21 20:16:20,189 - discord_bot - INFO - Bbb Loaded
+2024-08-21 20:22:15,636 - discord_bot - INFO - Bot is starting...
+2024-08-21 20:22:18,399 - discord_bot - INFO - Bot logged in as : E-Bot#8752
+2024-08-21 20:22:18,399 - discord_bot - INFO - ------
+2024-08-21 20:22:18,399 - discord_bot - INFO - Help Loaded
+2024-08-21 20:22:18,399 - discord_bot - INFO - Misc Loaded
+2024-08-21 20:22:18,401 - discord_bot - INFO - Admin Loaded
+2024-08-21 20:22:18,401 - discord_bot - INFO - Bbb Loaded
+2024-08-21 20:24:25,586 - discord_bot - INFO - Played sound file spacejam2
+2024-08-21 20:24:31,975 - discord_bot - INFO - Played sound file spongebobsqea
+2024-08-21 20:24:38,726 - discord_bot - INFO - Played sound file OnepieceCock
+2024-08-21 20:25:09,854 - discord_bot - ERROR - Error playing sound: Already connected to a voice channel.
+2024-08-21 20:25:13,950 - discord_bot - ERROR - Error playing sound file: Not connected to voice.
+2024-08-21 20:25:13,950 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 20:25:20,856 - discord_bot - INFO - Played sound file cbat3
+2024-08-21 20:25:27,578 - discord_bot - INFO - Played sound file ssbm64
+2024-08-21 20:25:34,166 - discord_bot - INFO - Played sound file luigiitalian
+2024-08-21 20:25:43,223 - discord_bot - INFO - Played sound file ducksong4
+2024-08-21 20:27:21,908 - discord_bot - INFO - Played sound file gottablast2
+2024-08-21 20:27:26,868 - discord_bot - INFO - Played sound file ssbm14
+2024-08-21 20:27:33,577 - discord_bot - INFO - Played sound file Sussyballs2
+2024-08-21 20:27:40,740 - discord_bot - INFO - Played sound file sadsong
+2024-08-21 20:27:47,848 - discord_bot - INFO - Played sound file mysterybox
+2024-08-21 20:27:56,970 - discord_bot - INFO - Played sound file dothehustle
+2024-08-21 20:28:05,622 - discord_bot - INFO - Played sound file punktactics
+2024-08-21 20:28:11,675 - discord_bot - INFO - Played sound file hapapa3
+2024-08-21 20:28:20,226 - discord_bot - INFO - Played sound file glubgogabala
+2024-08-21 20:32:20,495 - discord_bot - INFO - Played sound file halo25
+2024-08-21 20:32:27,334 - discord_bot - INFO - Played sound file ssbm11
+2024-08-21 20:32:33,936 - discord_bot - INFO - Played sound file ssbm42
+2024-08-21 20:32:40,681 - discord_bot - INFO - Played sound file wombocomboa
+2024-08-21 20:32:47,341 - discord_bot - INFO - Played sound file wiihell2
+2024-08-21 20:32:53,950 - discord_bot - INFO - Played sound file noreason
+2024-08-21 20:33:02,448 - discord_bot - INFO - Played sound file hopendrem
+2024-08-21 20:33:06,293 - discord_bot - ERROR - Error playing sound: Already connected to a voice channel.
+2024-08-21 20:33:08,972 - discord_bot - ERROR - Error playing sound: Already connected to a voice channel.
+2024-08-21 20:33:12,325 - discord_bot - ERROR - Error playing sound: Already connected to a voice channel.
+2024-08-21 20:33:15,716 - discord_bot - ERROR - Error playing sound: Already connected to a voice channel.
+2024-08-21 20:33:18,947 - discord_bot - ERROR - Error playing sound: Already connected to a voice channel.
+2024-08-21 20:33:22,293 - discord_bot - ERROR - Error playing sound: Already connected to a voice channel.
+2024-08-21 20:37:27,330 - discord_bot - INFO - Played sound file boomshackalacka
+2024-08-21 20:37:36,986 - discord_bot - INFO - Played sound file halokillamanjaro
+2024-08-21 20:37:44,979 - discord_bot - ERROR - Error playing sound file: Not connected to voice.
+2024-08-21 20:37:44,979 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 20:37:51,662 - discord_bot - ERROR - Error playing sound file: Not connected to voice.
+2024-08-21 20:37:51,663 - discord_bot - ERROR - Error playing sound: Not connected to voice.
+2024-08-21 20:37:58,361 - discord_bot - INFO - Played sound file basscata
+2024-08-21 20:38:05,031 - discord_bot - INFO - Played sound file ssbm19
+2024-08-21 20:38:11,646 - discord_bot - INFO - Played sound file wiihell5
+2024-08-21 20:38:19,059 - discord_bot - INFO - Played sound file 21ofseptember2
+2024-08-21 20:38:25,662 - discord_bot - INFO - Played sound file ssbm68
+2024-08-21 20:38:32,332 - discord_bot - INFO - Played sound file ssbm32
+2024-08-21 20:42:35,546 - discord_bot - INFO - Played sound file hungrypitbulls
+2024-08-21 20:42:44,369 - discord_bot - INFO - Played sound file donotpushthebutton
+2024-08-21 20:42:54,362 - discord_bot - INFO - Played sound file OBJECTION4
+2024-08-21 20:43:00,889 - discord_bot - INFO - Played sound file onlyaspoonfull
+2024-08-21 20:43:11,756 - discord_bot - INFO - Bot is starting...
+2024-08-21 20:43:14,254 - discord_bot - INFO - Bot logged in as : E-Bot#8752
+2024-08-21 20:43:14,254 - discord_bot - INFO - ------
+2024-08-21 20:43:14,254 - discord_bot - INFO - Help Loaded
+2024-08-21 20:43:14,256 - discord_bot - INFO - Misc Loaded
+2024-08-21 20:43:14,256 - discord_bot - INFO - Admin Loaded
+2024-08-21 20:43:14,256 - discord_bot - INFO - Bbb Loaded
+2024-08-21 20:43:28,122 - discord_bot - INFO - Played sound file gyrochicken3
+2024-08-21 20:43:36,344 - discord_bot - INFO - Played sound file wiiplay
+2024-08-21 20:43:43,064 - discord_bot - INFO - Played sound file alphabeticareobics3
+2024-08-21 20:43:50,307 - discord_bot - INFO - Played sound file miscmemesong15

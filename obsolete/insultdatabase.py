@@ -1,0 +1,111 @@
+# TODO: Consider moving these lists to a separate configuration file
+LIST_OF_ADJECTIVES = ["derpy","slack-jawed","evil","goody-two-shoes","bad","racist","unironic","poopy","mouthbreathing","boiled","onion-breathed","belligerent","thorny","homophobic","calloused","vain","patronizing","defective","broken","unshaven","horny","defensive","unibrowed","bitchy","cruel","worthless","hostile","insufferable","dense","cavernous", "thick","feeble-minded","nasty","impolite","clumsy","stupid","rude","ripe","dim-witted","gelatenous","shit","poopy","pussy-breath","dick-breath","tiny", "ugly","meanie","motherfuckin", "stank","wet","nick-lookin", "soggy","big","small","fat", "cringe", "ass","stinky"]
+LIST_OF_NOUNS = ["republican", "waste-of-skin", "hoe","cringe-lord", "incel", "liberal", "fart","benis","mouthbreather","nazi","arse","tax-evader","scab","joke","brute","dingus","grunt","noob","dingleberry","wart","NPC","goblin","turd","twat","wanker","worm","idiot","oaf","baby", "motherfucker","cunt","ass","lobotomite", "cooter","bitch", "titty", "cum-stain","cum","cum-hole", "dickhead","bussy"]
+import pickle
+
+# REVIEW: Consider using a database instead of pickle files for better performance and scalability
+
+def updateAdjs(adj_list):
+    # TODO: Implement error handling for file operations
+    pathname = f"adjectives.pickle"
+    with open(pathname, "wb") as f:
+        pickle.dump(adj_list, f)
+
+def updateNouns(noun_list):
+    # TODO: Implement error handling for file operations
+    pathname = f"nouns.pickle"
+    with open(pathname, "wb") as f:
+        pickle.dump(noun_list, f)
+
+def loadADJs():
+    # TODO: Implement proper error handling and logging
+    try:
+        with open("adjectives.pickle", "rb") as f:
+             list_of_adjectives = pickle.load(f)
+    except:
+        list_of_adjectives = LIST_OF_ADJECTIVES
+    return list_of_adjectives
+
+def loadNOUNs():
+    # TODO: Implement proper error handling and logging
+    try:
+        with open("nouns.pickle", "rb") as f:
+             list_of_nouns = pickle.load(f)
+    except:
+        list_of_nouns = LIST_OF_NOUNS
+    return list_of_nouns
+
+def verify_new_noun(newnoun):
+    # TODO: Refactor this function to improve readability and error handling
+    if isinstance(newnoun,str):
+        if len(newnoun.split(" ")) == 1:
+            existsFlag = False
+            noun_db = loadNOUNs()
+            for nown in noun_db:
+                if nown.lower() == newnoun.lower():
+                    print("someone tried to add an existing word")
+                    existsFlag = True
+                    break
+            if existsFlag == False:
+                noun_db.append(newnoun.lower())
+                updateNouns(noun_db)
+
+                returnmessage = "the word: " + newnoun + " was added to the nowns database"
+            else:
+                returnmessage = f"the word: " + newnoun.lower() + " already exists in the nouns database"
+        else:
+            returnmessage = f"incorect word formating " + newnoun.lower()
+    else:
+        returnmessage = f"incorect word formating " + newnoun.lower()
+    print(returnmessage)
+    return returnmessage
+
+
+def verify_new_adj(newadj):
+    # TODO: Refactor this function to improve readability and error handling
+    if isinstance(newadj,str):
+        if len(newadj.split(" "))==1:
+            existsFlag = False
+            adj_db = loadADJs()
+            for adj in adj_db:
+                if adj.lower() == newadj.lower():
+                    existsFlag = True
+                    break
+            if existsFlag == False:
+                adj_db.append(newadj.lower())
+                updateAdjs(adj_db)
+                returnmessage = "the word: "+ newadj.lower()+" was added to the adj database"
+            else:
+                returnmessage = f"the word: "+ newadj.lower()+" already exists in the adj database"
+        else:
+            returnmessage = f"incorect word formating "+ newadj.lower()
+    else:
+        returnmessage = f"incorect word formating " + newadj.lower()
+    print(returnmessage)
+    return returnmessage
+
+def printoutDB():
+    # REVIEW: Consider optimizing this function for larger datasets
+    response = "Nouns:\n"
+    nouns = loadNOUNs()
+    nouns.sort()
+    adjs = loadADJs()
+    adjs.sort()
+    for n in nouns:
+        response += " " + n
+    response += "\nAdjectives:\n"
+    for a in adjs:
+        response += " " + a
+    return response
+
+
+if __name__ == "__main__":
+    verify_new_adj('flimSY god')
+    print(loadADJs())
+    verify_new_noun('PEE_PISSER')
+    print(loadNOUNs())
+
+# TODO: Implement comprehensive error handling throughout the script
+# TODO: Add unit tests for each function
+# REVIEW: Consider the ethical implications of storing and using offensive language
+# TODO: Implement logging for better debugging and monitoring

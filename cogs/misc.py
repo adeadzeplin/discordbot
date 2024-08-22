@@ -16,17 +16,24 @@ load_dotenv()
 botit = os.getenv('BOT_ID')
 
 class Misc(commands.Cog):
+    """Miscellaneous commands for various purposes."""
+
     def __init__(self, client):
         self.client = client
         # TODO: Consider adding a setup method to initialize any necessary attributes
 
     @commands.Cog.listener()
     async def on_ready(self):
-        print(f'Misc Loaded')
+        # self.client.logger.info('Misc Loaded')
         # TODO: Replace print statement with proper logging
+        pass
 
     @commands.command(name='invite', help='Generates a link to invite the bot to a server')
     async def invitebot(self, ctx):
+        """Generate an invite link for the bot.
+        
+        Usage: !invite
+        """
         # TODO: Consider moving the oauth_url generation to a separate utility function
         response = discord.utils.oauth_url(botit, permissions=None, guild=None, redirect_uri=None)
         await ctx.send(response)
@@ -66,6 +73,10 @@ class Misc(commands.Cog):
 
     @commands.command(name='ping', help='Check the bot\'s latency')
     async def ping(self, ctx):
+        """Check the bot's latency.
+        
+        Usage: !ping
+        """
         await ctx.send(f'Pong! {round(self.client.latency * 1000)}ms')
 
 

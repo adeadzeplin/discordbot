@@ -1,70 +1,206 @@
 import random
-
 import discord
 from discord.ext import commands
 import numpy as np
 import ffmpeg
 import asyncio
 import time
-# import  sounddevice as sd
-from insult import insult
-import insultdatabase
-from discord.ext import tasks, commands
+from discord.ext import tasks
 import pickle
+from discord import app_commands
+from typing import List
+import os
+from discord.errors import ClientException
+from discord.errors import ConnectionClosed
+import logging
 
 # TODO: Consider moving this to a configuration file
 BOTID = 725508807077396581
 
 class Bbb(commands.Cog):
-    def __init__(self,client):
-        self.client = client
-
-        # Template for storing sound data
-        self.data_map_template = {
-            "total_plays": 0,
-            "longest_chain": 0
-        }
+    def __init__(self, bot):
+        self.bot = bot
+        self.data_map_template = {"total_plays": 0, "longest_chain": 0}
         self.sound_data = {}
         self.prev = ""
         self.consect_count = 1
-
         self.sound_history = []
+        self.snds = self.load_soundfiles()
+        self.queue = asyncio.Queue()
+        self.is_playing = False
+        self.is_paused = False
+        self.current_voice_client = None
+        self.logger = logging.getLogger('discord_bot')
+        self.play_task = None
+        self.current_sound = None
+        self.bot.loop.create_task(self.initialize_presence())
 
-    @tasks.loop(seconds=1)
-    async def check_queue(self):
-        # REVIEW: Consider implementing proper error handling here
+    async def initialize_presence(self):
+        await self.bot.wait_until_ready()
+        await self.update_presence()
+
+    def load_soundfiles(self):
+        return [f'./sounds/{filename}' for filename in os.listdir('./sounds') if filename.endswith(('.wav', '.mp3'))]
+
+    async def sound_name_autocomplete(self, interaction: discord.Interaction, current: str) -> List[app_commands.Choice[str]]:
+        sound_names = [s.split('/')[-1].split('.')[0] for s in self.snds]
+        return [app_commands.Choice(name=sound, value=sound) for sound in sound_names if current.lower() in sound.lower()][:25]
+
+    async def update_presence(self):
+        queue_size = self.queue.qsize()
+        activity = discord.Activity(type=discord.ActivityType.playing, name=f"{self.current_sound or 'Nothing'}")
+        for guild in self.bot.guilds:
+            try:
+                if queue_size > 0:
+                    new_nickname = f"E-bot : {queue_size}"
+                else:
+                    new_nickname = "E-bot"
+                await guild.me.edit(nick=new_nickname)
+            except discord.errors.Forbidden:
+                self.logger.warning(f"Unable to change nickname in guild {guild.name}. Missing permissions.")
+        await self.bot.change_presence(activity=activity)
+
+    @commands.hybrid_command(name='bbb', aliases=['b', 'B'], help='Add random sounds to the queue')
+    @app_commands.describe(number_of_bs="Number of random sounds to add", sound="The sound to play (optional)")
+    @app_commands.autocomplete(sound=sound_name_autocomplete)
+    async def bbb(self, ctx: commands.Context, number_of_bs: int = 1, sound: str = None):
+        voice_state = ctx.author.voice
+        if voice_state is None:
+            await ctx.send("You need to be in a voice channel to use this command.")
+            return
+        voice_channel = voice_state.channel
+        for _ in range(number_of_bs):
+            await self.queue.put(('random', sound, voice_channel))
+        await ctx.send(f"Added {number_of_bs} {'random' if sound is None else sound} sound(s) to the queue.")
+        await self.update_presence()
+        if not self.is_playing:
+            self.play_task = asyncio.create_task(self.play_queue(ctx))
+
+    @commands.hybrid_command(name='bfile', aliases=['bf', 'Bf'], help="Add a specific sound file to the front of the queue")
+    @app_commands.describe(filename="The name of the sound file to play")
+    @app_commands.autocomplete(filename=sound_name_autocomplete)
+    async def bbb_file(self, ctx: commands.Context, *, filename: str = "1bit"):
+        voice_state = ctx.author.voice
+        if voice_state is None:
+            await ctx.send("You need to be in a voice channel to use this command.")
+            return
+        voice_channel = voice_state.channel
+        await self.queue.put(('file', filename, voice_channel))
+        await ctx.send(f"Added '{filename}' to the queue.")
+        await self.update_presence()
+        if not self.is_playing:
+            self.play_task = asyncio.create_task(self.play_queue(ctx))
+
+    @commands.hybrid_command(name='pause', help='Pause the current playback')
+    async def pause(self, ctx: commands.Context):
+        if self.current_voice_client and self.current_voice_client.is_playing():
+            self.current_voice_client.pause()
+            self.is_paused = True
+            await ctx.send("Playback paused.")
+        else:
+            await ctx.send("Nothing is currently playing.")
+
+    @commands.hybrid_command(name='resume', help='Resume the paused playback')
+    async def resume(self, ctx: commands.Context):
+        if self.current_voice_client and self.is_paused:
+            self.current_voice_client.resume()
+            self.is_paused = False
+            await ctx.send("Playback resumed.")
+        else:
+            await ctx.send("Nothing is paused.")
+
+    async def play_queue(self, ctx):
+        self.is_playing = True
         try:
-            data = self.client.pipes['s2d']['bbb'].get(0)
-        except:
-            data = None
+            while not self.queue.empty():
+                if self.is_paused:
+                    await asyncio.sleep(1)
+                    continue
 
+                play_type, sound, voice_channel = await self.queue.get()
+                await self.update_presence()
+                try:
+                    if not self.current_voice_client or not self.current_voice_client.is_connected():
+                        self.current_voice_client = await voice_channel.connect()
+                    elif self.current_voice_client.channel != voice_channel:
+                        await self.current_voice_client.move_to(voice_channel)
+                    
+                    await self._bbb_logic(sound)
+                    while self.current_voice_client and self.current_voice_client.is_playing():
+                        await asyncio.sleep(0.1)
+                except Exception as e:
+                    self.logger.error(f"Error playing sound: {str(e)}")
+                    if isinstance(e, discord.ClientException) and str(e) == "Already playing audio.":
+                        self.current_voice_client.stop()
+                        await asyncio.sleep(0.1)
+                        continue
+                    elif isinstance(e, discord.errors.ConnectionClosed):
+                        self.logger.error("Connection closed. Attempting to reconnect...")
+                        await self.reconnect(voice_channel)
+                        continue
+                
+                await asyncio.sleep(1)
+        finally:
+            self.is_playing = False
+            self.current_sound = None
+            if self.current_voice_client and self.current_voice_client.is_connected():
+                await self.current_voice_client.disconnect()
+            self.current_voice_client = None
+            await self.update_presence()
+
+    async def reconnect(self, voice_channel):
         try:
-            if data is None:
-                data = self.client.pipes['t2d']['bbb'].get(0)
-        except:
-            data = None
+            if self.current_voice_client:
+                await self.current_voice_client.disconnect(force=True)
+            self.current_voice_client = await voice_channel.connect()
+        except Exception as e:
+            self.logger.error(f"Failed to reconnect: {str(e)}")
 
-        if data != None:
-            # TODO: Consider adding logging here
-            await self.bbb(None, deleteflag=False, Called_from_Queue=True, FileName=data['filename'], No_random_delay=True)
-
-    @commands.Cog.listener()
-    async def on_ready(self):
-        await self.check_queue.start()
-        self.load_bbb_log()
-        print(f'BBB Loaded')
-
-    def load_pfps(self):
-        import os
-        pfp_paths = []
-        for filename in os.listdir('./pfps'):
-            if filename.endswith('.png') or filename.endswith('.jpg'):
-                pfp_paths.append('./pfps/' + filename)
-        return pfp_paths
+    async def _bbb_logic(self, sound: str = None):
+        if sound is not None:
+            sound_path = f'./sounds/{sound}.wav'
+            if sound_path in self.snds:
+                randsnd = self.snds.index(sound_path)
+            else:
+                randsnd = random.randint(0, len(self.snds) - 1)
+        else:
+            randsnd = random.randint(0, len(self.snds) - 1)
+        
+        if self.current_voice_client.is_playing():
+            self.current_voice_client.stop()
+        
+        sound_path = self.snds[randsnd]
+        self.current_sound = sound_path.split("/")[-1].split(".")[0]
+        await self.update_presence()
+        
+        try:
+            self.current_voice_client.play(discord.FFmpegPCMAudio(sound_path))
+        except Exception as e:
+            self.logger.error(f"Error playing sound file: {str(e)}")
+            raise
+        
+        if sound_path not in self.sound_data:
+            self.sound_data[sound_path] = self.data_map_template.copy()
+        
+        self.sound_data[sound_path]["total_plays"] += 1
+        
+        if sound_path == self.prev:
+            self.consect_count += 1
+            if self.consect_count > self.sound_data[sound_path]["longest_chain"]:
+                self.sound_data[sound_path]["longest_chain"] = self.consect_count
+        else:
+            self.consect_count = 1
+        
+        self.prev = sound_path
+        
+        self.sound_history.append(self.current_sound)
+        
+        self.update_bbb_log()
+        
+        self.logger.info(f"Played sound file {self.current_sound}")
 
     def update_bbb_log(self):
-        pathname = f"sound_leaderboard.pickle"
-        with open(pathname, "wb") as f:
+        with open("sound_leaderboard.pickle", "wb") as f:
             pickle.dump(self.sound_data, f)
 
     def load_bbb_log(self):
@@ -73,196 +209,13 @@ class Bbb(commands.Cog):
                 self.sound_data = pickle.load(f)
         except:
             self.sound_data = {}
-    def plays_sort(self,data):
-        return data["total_plays"]
-    def chain_sort(self,data):
-        return data["longest_chain"]
 
     def get_top_songs_played(self):
-        self.temp = list(self.sound_data.keys())
-        sorted(self.temp, key=self.plays_sort)
-        out = []
-        for t in self.temp:
-            out.append((t,self.sound_data[t]["total_plays"]))
-        return out
+        return sorted([(k.split("/")[-1].split(".")[0], v["total_plays"]) for k, v in self.sound_data.items()], key=lambda x: x[1], reverse=True)
+
     def get_top_songs_chained(self):
-        self.temp = list(self.sound_data.keys())
-        sorted(self.temp, key=self.plays_sort)
-        out = []
-        for t in self.temp:
-            out.append((t,self.sound_data[t]["longest_chain"]))
-        return out
+        return sorted([(k.split("/")[-1].split(".")[0], v["longest_chain"]) for k, v in self.sound_data.items()], key=lambda x: x[1], reverse=True)
 
-    def load_soundfiles(self):
-        import os
-        soundpaths = []
-        for filename in os.listdir('./sounds'):
-            if filename.endswith('.wav') or filename.endswith('.mp3'):
-                soundpaths.append('./sounds/'+filename)
-        return soundpaths
-
-    @commands.command(name='BHistory', aliases=['bh', 'Bh'], help='Display the last played sound names', brief="Show sound history")
-    async def bbb_history(self, ctx, *, num=5):
-        """
-        Display the last played sound names.
-        
-        Usage: !BHistory [number]
-        Example: !BHistory 10
-        
-        [number] - Optional: Number of sound names to display (default: 5)
-        """
-        # TODO: Consider adding error handling for invalid 'num' values
-        await ctx.channel.purge(limit=1)
-
-        history_string = 'Displaying the last ' + str(num) + " sound names played:\n"
-        for it, s in enumerate(reversed(self.sound_history)):
-            history_string+= s + '\n'
-            if it >= num:
-                break
-        await ctx.channel.send(history_string)
-
-    @commands.command(name='bchain', aliases=['bc', 'Bc'], help="Display information about chained sounds", brief="Show chained sounds")
-    async def bbb_Chain(self, ctx, *, num=5):
-        """
-        Display information about chained sounds.
-        
-        Usage: !bchain [number]
-        Example: !bchain 10
-        
-        [number] - Optional: Number of chained sounds to display (default: 5)
-        """
-        pass
-        #save point
-        #adding a command to display the most plays sounds.
-        #add another command for chained sounds.
-
-    @commands.command(name='Bfile', aliases=['bf', 'Bf'], help="Play a specific sound file", brief="Play sound file")
-    async def bbb_file(self, ctx, *, filename="1bit"):
-        """
-        Play a specific sound file.
-        
-        Usage: !Bfile <filename>
-        Example: !Bfile mysound
-        
-        <filename> - The name of the sound file to play (default: 1bit)
-        """
-        await self.bbb(ctx, deleteflag=False, Called_from_Queue=True, FileName=filename, No_random_delay=True)
-
-    @commands.command(name='BBB', aliases=['bbb', 'b', 'B'], help='Play a set of n random sounds')
-    async def bbb(self, ctx, *, number_of_bs=1, deleteflag=True, Called_from_Queue=False,FileName=None, No_random_delay=False):
-        # REVIEW: This method is quite long and complex. Consider breaking it down into smaller functions
-        if deleteflag:
-            await ctx.channel.purge(limit=1)
-        if ctx == None:
-            server = self.client.get_guild(877713599894798367)#911398925804646421
-        else:
-            server = ctx.message.guild
-
-        connected = False
-        disconnect_rate = 0
-        snds = self.load_soundfiles()
-        vc = None
-        for i in range(number_of_bs):
-            if vc is not None:
-                connected = vc.is_connected()
-            print("we are connected:", connected)
-            if connected == False:
-
-                voicechannels = [].copy()
-                for chan in server.channels:
-                    if isinstance(chan, discord.VoiceChannel):
-                        if len(chan.members) > 0:
-                            voicechannels.append(chan)
-                if len(voicechannels) == 0:
-                    return
-                
-                randindex = np.random.randint(len(voicechannels))
-                randchannel = voicechannels[randindex]
-
-                if vc is not None:
-                    await vc.disconnect(force=True)
-                vc = await randchannel.connect(timeout=20.0,reconnect=True)
-                connected = vc.is_connected()
-                print("we arent conneced... Now we are:",connected)
-            
-            if Called_from_Queue == True and FileName != None :
-                FileName = f'./sounds/{FileName}.wav'
-                if FileName in snds:
-                    randsnd = snds.index(FileName)
-                else:
-                    randsnd = np.random.randint(len(snds))
-            else:
-                randsnd = np.random.randint(len(snds))
-            #
-            #
-            #
-            #
-            #
-            #
-            for dude in vc.channel.members: # Play function call happens in a loop checking if the bot is still conectted to voice. Because the bot can be disconnected before playing and will break everything
-                if dude.id == BOTID:
-                    vc.play(discord.FFmpegPCMAudio(snds[randsnd]))#,executable='C:/ffmpeg/bin/ffmpeg',options=['-guess_layout_max 0','-i']
-                    break
-            
-            if snds[randsnd] not in self.sound_data:
-                self.sound_data[snds[randsnd]] = self.data_map_template.copy()
-            
-            self.sound_data[snds[randsnd]]["total_plays"] += 1
-            
-            if snds[randsnd] == self.prev:
-                self.consect_count += 1
-                if self.consect_count > self.sound_data[snds[randsnd]]["longest_chain"]:
-                    self.sound_data[snds[randsnd]]["longest_chain"] = self.consect_count
-                    
-                    for dude in vc.channel.members:
-                        if dude.id == BOTID:
-                            vc.play(discord.FFmpegPCMAudio(snds[   snds.index("wombocomboa")    ]))
-                            break
-            else:
-                self.consect_count = 1
-            
-            self.prev = snds[randsnd]
-
-            if ctx != None:
-                print(f"bbbbing in {ctx.message.guild} sound file {snds[randsnd]}")
-            else:
-                print(f"bbbbing sound file: '{snds[randsnd].replace('./sounds/','').replace('.wav','')}'")
-
-            if not No_random_delay:
-                await asyncio.sleep(np.random.randint(5, 20 ))
-
-            while vc.is_playing():
-                print(f"still playing")
-                await asyncio.sleep(.2)
-            await asyncio.sleep(2)
-            
-            sound_name = snds[randsnd]
-            sound_name = sound_name.split(".")[1]
-            sound_name = sound_name.split("/")
-            sound_name = sound_name[len(sound_name) - 1]
-            self.sound_history.append(sound_name)
-
-            print(f"{i+1} of {number_of_bs}")
-            if i%10==0:
-                self.update_bbb_log()
-            
-        if connected == True:
-            for dude in vc.channel.members:
-                if dude.id == BOTID:
-                    disconflag = True
-            if disconflag == True:
-                await vc.disconnect(force=True)
-            await dude.edit(nick=None)
-        self.update_bbb_log()
-        if ctx != None:
-            print(f"{ctx.message.author} called the b command in {ctx.message.guild} and it ran {number_of_bs} times")
-
-async def setup(client):
-    await client.add_cog(Bbb(client))
-
-# OVERALL NOTES:
-# TODO: Implement comprehensive error handling throughout the script
-# TODO: Consider adding logging for better debugging and monitoring
-# REVIEW: The 'bbb' method is quite long and complex. Consider breaking it down into smaller, more manageable functions
-# TODO: Consider moving configuration values (like file paths and bot ID) to a separate config file
-# REVIEW: Evaluate the necessity of each imported module
+async def setup(bot):
+    await bot.add_cog(Bbb(bot))
+    await bot.tree.sync()
