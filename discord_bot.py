@@ -14,7 +14,8 @@ load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
 intents = discord.Intents.all()
 intents.members = True
-
+intents.message_content = True
+intents.voice_states = True
 # Setup logging
 log_directory = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'logs')
 os.makedirs(log_directory, exist_ok=True)
@@ -51,12 +52,22 @@ class CustomBot(commands.Bot):
 
     async def setup_hook(self):
         self.logger.info("Bot is starting...")
-        await self.load_cogs()
+        try:
+            await self.load_cogs()
+        except Exception as e:
+            self.logger.error(f"Error during setup: {str(e)}")
+            self.logger.error(''.join(traceback.format_tb(e.__traceback__)))
 
     async def load_cogs(self):
-        initial_extensions = ['cogs.custom_help', 'cogs.misc', 'cogs.admin', 'cogs.bbb']
-        for cog in initial_extensions:
-            await self.load_extension(cog)
+        cogs_dir = 'cogs'
+        for filename in os.listdir(cogs_dir):
+            if filename.endswith('.py'):
+                cog_name = f'{cogs_dir}.{filename[:-3]}'
+                try:
+                    await self.load_extension(cog_name)
+                    self.logger.info(f"")
+                except Exception as e:
+                    self.logger.error(f"Failed to load extension {cog_name}: {str(e)}")
 
     async def on_ready(self):
         self.logger.info(f"Bot logged in as : {self.user}")
@@ -67,11 +78,17 @@ class CustomBot(commands.Bot):
     async def on_command_error(self, ctx, error):
         if isinstance(error, commands.CommandInvokeError):
             original = error.original
-            self.logger.error(f'In {ctx.command.qualified_name}:')
+            if ctx.command:
+                self.logger.error(f'In {ctx.command.qualified_name}:')
+            else:
+                self.logger.error('In an unknown command:')
             self.logger.error(f'{original.__class__.__name__}: {str(original)}')
             self.logger.error(''.join(traceback.format_tb(original.__traceback__)))
         else:
-            self.logger.error(f'In {ctx.command.qualified_name}:')
+            if ctx.command:
+                self.logger.error(f'In {ctx.command.qualified_name}:')
+            else:
+                self.logger.error('In an unknown command:')
             self.logger.error(f'{error.__class__.__name__}: {str(error)}')
 
 client = CustomBot()
