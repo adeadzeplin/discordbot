@@ -8,6 +8,7 @@ My friends and I add fun features to him and when we get tired of a feature we r
 To run, Run discord_bot.py
 ## Current behavior:
 Jukebox - lets users add and manage a queue of audiofiles to play. Our sound library consists of over 700 short audio clips. Many are random sound bytes from gamefiles, memes, songs, and some custom sounds I designed. I've been building out the library slowly over 4 years.
+
 Admin - moderator commands.
 
 
