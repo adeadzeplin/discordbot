@@ -1,7 +1,7 @@
 # E-bot 
 This is the repo for my discord bot: E-Bot
 
-My friends and I add fun features to him and when we get tired of them we remove them.
+My friends and I add fun features to him and when we get tired of a feature we remove it.
 
 
 
