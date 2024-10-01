@@ -16,7 +16,7 @@ Admin - moderator commands.
 
 ## Depreciated behavior:
 - textbased dungeon crawler that runs in a discord text chat. originally created to run on an arduino uno in c. ported it to python. any user can have a go at completing the game in discord.
-  - later added twitch support to 
+  - later added twitch support to let the entirety of twitch chat have a go at collaboratively beating it.
 
 - Integration with twitch chat that allows twitch chatters control some of e-bot's behavior.
   - Like twitch chatters can tell ebot to insult someone in the discord server and the bot will generate an insult.
