@@ -1,105 +1,125 @@
-# RUN THIS FILE TO START THE BOT
-
 import discord
-import os
-import asyncio
 from discord.ext import commands
+import os
 from dotenv import load_dotenv
 import logging
 from logging.handlers import RotatingFileHandler
-import sys
-import traceback
+import asyncio
+import datetime
+from typing import List, Dict
 
+# Load environment variables
 load_dotenv()
-TOKEN = os.getenv('DISCORD_TOKEN')
-intents = discord.Intents.all()
-intents.members = True
+
+# Set up logging
+def setup_logging():
+    log_directory = 'logs'
+    if not os.path.exists(log_directory):
+        os.makedirs(log_directory)
+
+    log_file = os.path.join(log_directory, 'discord_bot.log')
+    
+    # Clear the log file
+    with open(log_file, 'w') as f:
+        f.write(f"Log file cleared on {datetime.datetime.now()}\n")
+
+    # Set up rotating file handler
+    file_handler = RotatingFileHandler(
+        log_file, maxBytes=5*1024*1024, backupCount=5
+    )
+    file_handler.setLevel(logging.INFO)
+    file_formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+    file_handler.setFormatter(file_formatter)
+
+    # Set up console handler
+    console_handler = logging.StreamHandler()
+    console_handler.setLevel(logging.INFO)
+    console_formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+    console_handler.setFormatter(console_formatter)
+
+    # Set up root logger
+    logger = logging.getLogger()
+    logger.setLevel(logging.INFO)
+    logger.addHandler(file_handler)
+    logger.addHandler(console_handler)
+
+# Call setup_logging at the start
+setup_logging()
+
+# Bot setup
+intents = discord.Intents.default()
 intents.message_content = True
-intents.voice_states = True
-# Setup logging
-log_directory = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'logs')
-os.makedirs(log_directory, exist_ok=True)
-log_file = os.path.join(log_directory, 'discord_bot.log')
+bot = commands.Bot(command_prefix='!', intents=intents)
 
-logger = logging.getLogger('discord_bot')
-logger.setLevel(logging.DEBUG)  # Change to DEBUG to capture more information
+@bot.event
+async def on_ready():
+    logging.info(f'{bot.user} has connected to Discord!')
+    print(f'{bot.user} is ready and connected to Discord!')
+    
+    # Sync application commands
+    await bot.tree.sync()
 
-# File Handler
-file_handler = RotatingFileHandler(log_file, maxBytes=10000000, backupCount=5)
-file_formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-file_handler.setFormatter(file_formatter)
-file_handler.setLevel(logging.DEBUG)
-logger.addHandler(file_handler)
+@bot.command()
+@commands.is_owner()
+async def sync(ctx):
+    """Sync application commands"""
+    synced = await bot.tree.sync()
+    await ctx.send(f"Synced {len(synced)} commands.")
 
-# Redirect all uncaught exceptions to the log file
-def exception_handler(exc_type, exc_value, exc_traceback):
-    if issubclass(exc_type, KeyboardInterrupt):
-        sys.__excepthook__(exc_type, exc_value, exc_traceback)
-        return
-    logger.error("Uncaught exception", exc_info=(exc_type, exc_value, exc_traceback))
+@bot.tree.command(name="ping", description="Check bot's latency")
+async def ping_slash(interaction: discord.Interaction):
+    await interaction.response.send_message(f"Pong! Latency: {round(bot.latency * 1000)}ms")
 
-sys.excepthook = exception_handler
+# Replace the existing help command setup with:
+class SimpleHelpCommand(commands.HelpCommand):
+    async def send_bot_help(self, mapping):
+        embed = discord.Embed(title="ebot Help", description="Here are all available commands:", color=discord.Color.blue())
+        
+        for cog, cmds in mapping.items():
+            cog_name = getattr(cog, "qualified_name", "No Category")
+            command_list = [cmd for cmd in cmds if not cmd.hidden]
+            
+            if command_list:
+                command_value = ""
+                for cmd in command_list:
+                    aliases = ", ".join(cmd.aliases) if cmd.aliases else "None"
+                    command_value += f"`{cmd.name}` (Aliases: {aliases})\n"
+                embed.add_field(name=cog_name, value=command_value, inline=False)
+        
+        channel = self.get_destination()
+        await channel.send(embed=embed)
 
-# Disable other loggers
-logging.getLogger('discord').setLevel(logging.ERROR)
-logging.getLogger('discord.http').setLevel(logging.ERROR)
-logging.getLogger('discord.gateway').setLevel(logging.ERROR)
+    async def send_command_help(self, command):
+        embed = discord.Embed(title=f"Help for {command.name}", color=discord.Color.green())
+        embed.add_field(name="Description", value=command.help or "No description available", inline=False)
+        embed.add_field(name="Usage", value=f"`{self.get_command_signature(command)}`", inline=False)
+        aliases = ", ".join(command.aliases) if command.aliases else "None"
+        embed.add_field(name="Aliases", value=aliases, inline=False)
+        
+        channel = self.get_destination()
+        await channel.send(embed=embed)
 
-class CustomBot(commands.Bot):
-    def __init__(self):
-        super().__init__(command_prefix='!', intents=intents, help_command=None)
-        self.logger = logger
+# Replace the existing help command setup with:
+bot.help_command = SimpleHelpCommand()
 
-    async def setup_hook(self):
-        self.logger.info("Bot is starting...")
+# Load cogs
+initial_extensions = ['cogs.jukebox', 'cogs.admin', 'cogs.cocophany']  # Added 'cogs.cocophany'
+
+async def load_extensions():
+    for extension in initial_extensions:
         try:
-            await self.load_cogs()
+            await bot.load_extension(extension)
+            logging.info(f"Successfully loaded extension: {extension}")
+            print(f"Successfully loaded extension: {extension}")
         except Exception as e:
-            self.logger.error(f"Error during setup: {str(e)}")
-            self.logger.error(''.join(traceback.format_tb(e.__traceback__)))
+            logging.error(f"Failed to load extension {extension}: {str(e)}")
+            print(f"Failed to load extension {extension}: {str(e)}")
 
-    async def load_cogs(self):
-        cogs_dir = 'cogs'
-        for filename in os.listdir(cogs_dir):
-            if filename.endswith('.py'):
-                cog_name = f'{cogs_dir}.{filename[:-3]}'
-                try:
-                    await self.load_extension(cog_name)
-                    self.logger.info(f"")
-                except Exception as e:
-                    self.logger.error(f"Failed to load extension {cog_name}: {str(e)}")
+async def main():
+    async with bot:
+        await load_extensions()
+        await bot.start(os.getenv('DISCORD_TOKEN'))
 
-    async def on_ready(self):
-        self.logger.info(f"Bot logged in as : {self.user}")
-        self.logger.info("------")
-        for cog in self.cogs:
-            self.logger.info(f"{cog.capitalize()} Loaded")
-
-    async def on_command_error(self, ctx, error):
-        if isinstance(error, commands.CommandInvokeError):
-            original = error.original
-            if ctx.command:
-                self.logger.error(f'In {ctx.command.qualified_name}:')
-            else:
-                self.logger.error('In an unknown command:')
-            self.logger.error(f'{original.__class__.__name__}: {str(original)}')
-            self.logger.error(''.join(traceback.format_tb(original.__traceback__)))
-        else:
-            if ctx.command:
-                self.logger.error(f'In {ctx.command.qualified_name}:')
-            else:
-                self.logger.error('In an unknown command:')
-            self.logger.error(f'{error.__class__.__name__}: {str(error)}')
-
-client = CustomBot()
-
-def run_discordbot(p=None):
-    if p:
-        client.pipes = p
-    try:
-        client.run(TOKEN, log_handler=None)
-    except Exception as e:
-        logger.error(f"Error running bot: {e}")
-
-if __name__ == "__main__":
-    run_discordbot()
+# Run the bot
+if __name__ == '__main__':
+    asyncio.run(main())
